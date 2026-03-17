@@ -1,0 +1,507 @@
+/* ===== LIKE AND SHARE BUTTONS STYLES ===== */
+
+/* Hidden utility class */
+.hidden {
+    display: none !important;
+}
+
+/* Image Actions Container */
+.image-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Action Buttons Container */
+.action-buttons {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    margin: 1.5rem 0;
+    position: relative !important;
+}
+
+/* Share Button Wrapper - for proper positioning */
+.share-btn-wrapper {
+    position: relative !important;
+    display: inline-block;
+}
+
+/* Share Button - Modern Circular Design */
+#shareBtn {
+    position: relative;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background: var(--accent);
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+#shareBtn:hover {
+    background: var(--primary);
+    box-shadow: 0 6px 20px rgba(86, 52, 42, 0.4);
+    transform: translateY(-4px);
+}
+
+#shareBtn i {
+    font-size: 1.25rem;
+    transition: transform 0.3s ease;
+}
+
+#shareBtn:hover i {
+    transform: rotate(12deg);
+}
+
+#shareBtn .btn-tooltip {
+    position: absolute;
+    bottom: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.8);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+#shareBtn:hover .btn-tooltip {
+    opacity: 1;
+}
+
+/* Share Menu Dropdown - Using display toggle to override item-page.css */
+#shareMenu {
+    position: absolute !important;
+    top: calc(100% + 8px) !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 200px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3) !important;
+    z-index: 99999 !important;
+    overflow: hidden !important;
+    animation: menuSlideIn 0.3s ease-out !important;
+    background: white !important;
+    border: 1px solid var(--border) !important;
+    margin-top: 8px !important;
+    min-width: 220px !important;
+    /* Hidden by default */
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+/* Show class for menu - must override item-page.css */
+#shareMenu.show {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateX(-50%) translateY(0) !important;
+}
+
+@keyframes menuSlideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) scale(0.9) translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) scale(1) translateY(0);
+    }
+}
+
+.share-menu-header {
+    padding: 12px !important;
+    border-bottom: 1px solid var(--border) !important;
+    background: var(--bg-light) !important;
+    color: var(--primary) !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+.share-menu-header i {
+    color: var(--accent) !important;
+}
+
+.share-option {
+    width: 100% !important;
+    text-align: right !important;
+    padding: 12px 16px !important;
+    transition: all 0.3s ease !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    color: var(--text-muted) !important;
+    font-size: 14px !important;
+    border: none !important;
+    background: transparent !important;
+    cursor: pointer !important;
+}
+
+.share-option:hover {
+    background: var(--bg-light) !important;
+    color: var(--primary) !important;
+    padding-right: 20px !important;
+}
+
+.share-option:active {
+    transform: scale(0.98) !important;
+}
+
+.share-option .icon-wrapper {
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+}
+
+.share-option .icon-wrapper i {
+    font-size: 16px !important;
+}
+
+/* Share option colors */
+.share-option[data-type="copy"] .icon-wrapper {
+    background: rgba(59, 130, 246, 0.15) !important;
+}
+
+.share-option[data-type="copy"] .icon-wrapper i {
+    color: #3b82f6 !important;
+}
+
+.share-option[data-type="whatsapp"] .icon-wrapper {
+    background: rgba(34, 197, 94, 0.15) !important;
+}
+
+.share-option[data-type="whatsapp"] .icon-wrapper i {
+    color: #22c55e !important;
+}
+
+.share-option[data-type="facebook"] .icon-wrapper {
+    background: rgba(37, 99, 235, 0.15) !important;
+}
+
+.share-option[data-type="facebook"] .icon-wrapper i {
+    color: #3b82f6 !important;
+}
+
+.share-option[data-type="twitter"] .icon-wrapper {
+    background: rgba(0, 0, 0, 0.1) !important;
+}
+
+.share-option[data-type="twitter"] .icon-wrapper i {
+    color: var(--primary) !important;
+}
+
+/* Favorite Button - Modern Circular Design */
+#favoriteBtn {
+    position: relative;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f43f5e 0%, #dc2626 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+#favoriteBtn:hover {
+    background: linear-gradient(135deg, #fb7185 0%, #ef4444 100%);
+    box-shadow: 0 6px 20px rgba(244, 63, 94, 0.4);
+    transform: translateY(-4px);
+}
+
+#favoriteBtn i {
+    font-size: 1.25rem;
+    transition: transform 0.3s ease;
+}
+
+#favoriteBtn:hover i {
+    transform: scale(1.25);
+}
+
+#favoriteBtn .btn-tooltip {
+    position: absolute;
+    bottom: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.9);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#favoriteBtn:hover .btn-tooltip {
+    opacity: 1;
+}
+
+/* Favorite Button - Liked State */
+#favoriteBtn.liked {
+    background: linear-gradient(135deg, #f85d77 0%, #b91c1c 100%);
+    box-shadow: 0 0 25px rgba(244, 63, 94, 0.5);
+}
+
+#favoriteBtn.liked i {
+    color: #f0b7bd;
+}
+
+/* Action Stats - Minimal Pills */
+.action-stats {
+    display: flex;
+    gap: 0.25rem;
+    border-radius: 9999px;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.action-stats .stat-item {
+    text-align: center;
+    padding: 0 0.5rem;
+}
+
+.action-stats .stat-icon {
+    font-size: 0.75rem;
+}
+
+.action-stats .stat-icon.likes {
+    color: #fb7185;
+}
+
+.action-stats .stat-icon.shares {
+    color: #d4ba89;
+}
+
+.action-stats .stat-value {
+    color: white;
+    font-weight: bold;
+    font-size: 0.75rem;
+}
+
+.action-stats .stat-divider {
+    width: 1px;
+    height: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    align-self: center;
+}
+
+/* Particle Effects */
+.particle-container {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: particleFly 0.8s ease-out forwards;
+}
+
+@keyframes particleFly {
+    0% { 
+        opacity: 1; 
+        transform: translate(0, 0) scale(1);
+    }
+    100% { 
+        opacity: 0; 
+        transform: translate(var(--tx), var(--ty)) scale(0);
+    }
+}
+
+/* Floating Hearts */
+.floating-heart {
+    position: absolute;
+    font-size: 16px;
+    pointer-events: none;
+    animation: floatUp 1s ease-out forwards;
+}
+
+@keyframes floatUp {
+    0% { 
+        opacity: 1; 
+        transform: translateY(0) scale(1);
+    }
+    100% { 
+        opacity: 0; 
+        transform: translateY(-60px) scale(0.5);
+    }
+}
+
+/* Heart Pulse Animation */
+@keyframes heartPulse {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.3); }
+    50% { transform: scale(0.9); }
+    75% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+
+.animate-heartPulse {
+    animation: heartPulse 0.6s ease-in-out;
+}
+
+/* Like Pop Animation */
+@keyframes likePop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+#favoriteBtn.clicked {
+    animation: likePop 0.4s ease;
+}
+
+/* Toast Notification */
+.toast-notification {
+    position: fixed;
+    top: 5rem;
+    right: 1rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    animation: pulse 2s infinite;
+    z-index: 99999 !important;
+    font-weight: 500;
+}
+
+.toast-notification.success {
+    background: var(--accent);
+    color: white;
+}
+
+.toast-notification.error {
+    background: #ef4444;
+    color: white;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+/* Share menu hover glow */
+#shareBtn:hover {
+    box-shadow: 0 0 20px rgba(182, 142, 101, 0.5);
+}
+
+/* Like button glow effect */
+#favoriteBtn.liked {
+    box-shadow: 0 0 25px rgba(239, 68, 68, 0.5);
+}
+
+#favoriteBtn:hover {
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
+}
+
+/* ===== MOBILE RESPONSIVE STYLES ===== */
+@media (max-width: 640px) {
+    /* Keep share and like buttons circular on mobile */
+    #shareBtn,
+    #favoriteBtn {
+        width: 48px !important;
+        height: 48px !important;
+        min-width: 48px !important;
+        min-height: 48px !important;
+        border-radius: 50% !important;
+        padding: 0 !important;
+        flex-shrink: 0 !important;
+    }
+    
+    #shareBtn i,
+    #favoriteBtn i {
+        font-size: 1.25rem !important;
+    }
+    
+    .action-buttons {
+        flex-wrap: nowrap !important;
+        justify-content: center;
+        gap: 0.5rem !important;
+    }
+    
+    .share-btn-wrapper {
+        flex-shrink: 0 !important;
+    }
+    
+    /* Adjust share menu for mobile */
+    #shareMenu {
+        left: 50% !important;
+        transform: translateX(-50%) scale(1) !important;
+        min-width: 180px !important;
+    }
+}
+/*  items view more button     */ 
+.view-more-btn {
+    position: relative;
+    overflow: hidden;
+    background: white;
+    color: var(--primary);
+    font-weight: bold;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.view-more-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(207, 170, 121, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.view-more-btn:hover::before {
+    left: 100%;
+}
+
+.view-more-btn:hover {
+    background: var(--accent);
+    color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(207, 170, 121, 0.4);
+}
+
+.view-more-btn i {
+    transition: all 0.3s ease;
+}
+
+.view-more-btn:hover i {
+    animation:  BtnIcon 0.6s ease-in-out;
+}
+
+@keyframes  BtnIcon {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+}

@@ -4,7 +4,7 @@
  */
 
 // Wait for DOM to be ready
-function initializeItemPage() {
+async function initializeItemPage() {
     // Get item ID from URL
     var urlParams = new URLSearchParams(window.location.search);
     var itemId = urlParams.get('id') || 'kitchen-1';
@@ -12,8 +12,14 @@ function initializeItemPage() {
     // Current language
     var currentLang = localStorage.getItem('siteLang') || 'ar';
 
-    // Find item (use global portfolioItems from item-data.js)
-    var item = portfolioItems.find(function(i) { return i.id === itemId; }) || portfolioItems[0];
+// Load items async, fallback sync for compatibility
+    var items = window.portfolioItems;
+    try {
+        items = await window.loadPortfolioItems();
+    } catch(e) {
+        console.warn('Portfolio load failed:', e);
+    }
+    var item = items.find(function(i) { return i.id === itemId; }) || items[0];
 
     // Get translations
     var lang = (typeof getCurrentLang === 'function' ? getCurrentLang() : null) || localStorage.getItem('siteLang') || 'ar';
@@ -25,11 +31,17 @@ function initializeItemPage() {
         itemImageEl.alt = item.title[lang] || item.title.ar;
     }
     
-    // Populate thumbnails (using same image for now)
+// Populate thumbnails with multi-angle images
     var thumbnails = document.querySelectorAll('.thumbnail-item img');
-    thumbnails.forEach(function(thumb) {
-        thumb.src = item.image;
+    var thumbImages = item.images || [item.image, item.image, item.image, item.image]; // Fallback to single image x4
+    
+    thumbnails.forEach(function(thumb, index) {
+        thumb.src = thumbImages[index] || item.image;
+        thumb.alt = item.title[lang] || item.title.ar + ' - Angle ' + (index + 1);
     });
+    
+    var activeThumb = document.querySelector('.thumbnail-item.active img');
+    if (activeThumb) activeThumb.src = thumbImages[0] || item.image;
     
     var itemCategoryEl = document.getElementById('itemCategory');
     if (itemCategoryEl) {
@@ -90,14 +102,14 @@ function initializeItemPage() {
     }
 
     // Related items (same category, excluding current)
-    var related = portfolioItems.filter(function(i) { return i.category[lang] === item.category[lang] && i.id !== item.id; }).slice(0, 3);
+    var related = items.filter(function(i) { return i.category[lang] === item.category[lang] && i.id !== item.id; }).slice(0, 3);
     var relatedDiv = document.getElementById('relatedItems');
     
     if (relatedDiv) {
         relatedDiv.innerHTML = '';  // Clear existing content
         if (related.length === 0) {
             // If no related in same category, get random items
-            var random = portfolioItems.filter(function(i) { return i.id !== item.id; }).slice(0, 3);
+            var random = items.filter(function(i) { return i.id !== item.id; }).slice(0, 3);
             random.forEach(function(relatedItem) {
                 var card = createRelatedCard(relatedItem, lang);
                 relatedDiv.appendChild(card);
@@ -131,9 +143,22 @@ function initializeItemPage() {
 
     // Update feature items styling
     var featureItems = document.querySelectorAll('#itemFeatures li');
-    featureItems.forEach(function(item, index) {
-        item.style.animationDelay = (index * 0.1) + 's';
-        item.classList.add('hover:translate-x-1', 'transition-transform');
+    featureItems.forEach(function(li, index) {
+        li.style.animationDelay = (index * 0.1) + 's';
+        li.classList.add('hover:translate-x-1', 'transition-transform');
+    });
+
+    var thumbImagesForClick = item.images || [item.image, item.image, item.image, item.image];
+    document.querySelectorAll('.thumbnail-item').forEach(function(thumb) {
+        thumb.addEventListener('click', function() {
+            document.querySelectorAll('.thumbnail-item').forEach(function(t) {
+                t.classList.remove('active');
+            });
+            this.classList.add('active');
+            var thumbIndex = this.getAttribute('data-index');
+            var main = document.getElementById('itemImage');
+            if (main) main.src = thumbImagesForClick[thumbIndex] || item.image;
+        });
     });
 }
 
@@ -143,14 +168,4 @@ if (document.readyState === 'loading') {
 } else {
     initializeItemPage();
 }
-
-// Thumbnail click handler
-document.querySelectorAll('.thumbnail-item').forEach(function(thumb) {
-    thumb.addEventListener('click', function() {
-        document.querySelectorAll('.thumbnail-item').forEach(function(t) { 
-            t.classList.remove('active'); 
-        });
-        this.classList.add('active');
-    });
-});
 

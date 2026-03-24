@@ -189,8 +189,64 @@ var portfolioItems = [
     }
 ];
 
-// Export for use in other files
+/**
+ * Ensure gallery filter + icon exist (JSON may omit optional fields)
+ */
+function normalizePortfolioItem(item) {
+    if (!item || typeof item !== 'object') return item;
+    if (!item.filter && item.category && item.category.en) {
+        var map = { Kitchen: 'kitchen', Bedroom: 'bedroom', 'Living Room': 'living', Door: 'door', Decor: 'decor' };
+        item.filter = map[item.category.en] || 'decor';
+    }
+    if (!item.icon) {
+        var iconByFilter = { kitchen: 'fa-home', bedroom: 'fa-bed', living: 'fa-couch', door: 'fa-door-open', decor: 'fa-gem' };
+        item.icon = iconByFilter[item.filter] || 'fa-image';
+    }
+    // Favorites: use data flag OR localStorage override (localStorage takes precedence)
+    item.isFavorite = (typeof item.isFavorite !== 'undefined' ? item.isFavorite : false);
+    try {
+        var localFav = localStorage.getItem('favorite-' + item.id);
+        if (localFav === 'true') item.isFavorite = true;
+    } catch (e) {
+        // localStorage unavailable
+    }
+    return item;
+}
+
+window.normalizePortfolioItem = normalizePortfolioItem;
+
+/**
+ * Load portfolio items from data/portfolio.json (primary).
+ * Falls back to the embedded array if fetch fails or JSON is empty.
+ */
+window.loadPortfolioItems = async function() {
+    // Try portfolio_fixed.json first (demo favorites), then portfolio.json, then fallback
+    const sources = ['data/portfolio.json', 'data/portfolio.json'];
+    
+    for (let source of sources) {
+        try {
+            const response = await fetch(source);
+            if (response.ok) {
+                const items = await response.json();
+                if (Array.isArray(items) && items.length > 0) {
+                    console.log(`Loaded ${items.length} items from ${source}`);
+                    return items.map(normalizePortfolioItem);
+                }
+            }
+        } catch (error) {
+            console.warn(`Failed to load ${source}:`, error);
+        }
+    }
+    
+    console.warn('All JSON failed, using embedded list');
+    return portfolioItems.map(normalizePortfolioItem);
+};
+
+// Keep original array as fallback
+window.portfolioItems = portfolioItems;
+
+// Export for Node (unchanged)
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = portfolioItems;
-}
+};
 

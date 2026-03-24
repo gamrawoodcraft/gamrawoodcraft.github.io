@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/package.json",
   "name": "ayourwood-website",
   "version": "1.0.0",
-  "description": "Ayour Woodworking Workshop - Modern Carpentry Website",
+  "description": "Gamra Wood Craft — Moroccan custom woodworking (static site)",
   "scripts": {
     "build:css": "tailwindcss -i ./input.css -o ./css/output.css --minify",
     "watch:css": "tailwindcss -i ./input.css -o ./css/output.css --watch",

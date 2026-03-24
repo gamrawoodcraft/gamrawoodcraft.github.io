@@ -1,5 +1,5 @@
  /* ================================================
-   ورشة ايور للنجارة - AYOUR WOODWORKING WORKSHOP
+   كمرة للصناعة التقليدية الخشبية — Gamra Wood Craft
    Professional Custom Stylesheet
    
    ================================================
@@ -72,6 +72,17 @@ body {
     color: var(--primary);
     overflow-x: hidden;
     transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Keyboard focus — accent outline (works on any border-radius) */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:not([tabindex="-1"]):focus-visible {
+    outline: 2px solid var(--accent, #cfaa79);
+    outline-offset: 3px;
 }
 
 /* ===== HEADING STYLES ===== */
@@ -453,6 +464,16 @@ textarea.form-input:focus {
     background-size: cover;
     position: relative;
     overflow: hidden;
+}
+
+/* Home hero: photo + warm gradient (replaces duplicate inline styles on #home) */
+.hero-home {
+    background-image:
+        linear-gradient(135deg, rgba(110, 76, 11, 0.88) 0%, rgba(156, 117, 43, 0.82) 45%, rgba(233, 188, 106, 0.78) 100%),
+        url('../assets/images/herosection.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /* Dynamic Animated Overlay */
@@ -2591,6 +2612,11 @@ textarea.form-input:focus {
     box-shadow: 0 0 25px rgba(207, 170, 121, 0.3), inset 0 0 10px rgba(207, 170, 121, 0.1);
 }
 
+.contact-input:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
 .contact-input:not(:placeholder-shown) {
     border-color: rgba(207, 170, 121, 0.3);
 }
@@ -2626,6 +2652,62 @@ textarea.form-input:focus {
     background: var(--primary);
     color: white;
     padding: 0.5rem;
+}
+
+/* Phone row: no left icon — avoid 3rem padding; match select + input height */
+.phone-field-row {
+    align-items: stretch;
+    gap: 0.75rem;
+}
+
+.phone-field-row .phone-country-select {
+    flex: 0 0 auto;
+    width: fit-content;
+    max-width: 110px;
+    min-width: 80px;
+    min-height: 3.125rem;
+    height: 3.125rem;
+    padding: 0.65rem 0.75rem 0.65rem 2rem;
+    box-sizing: border-box;
+    line-height: 1.4;
+    font-size: 0.95rem;
+    color: #ffffff;
+    background-position: left 0.55rem center;
+    background-size: 1em;
+}
+
+.phone-field-row .phone-national-input {
+    flex: 1 1 0%;
+    min-width: 0;
+    min-height: 3.125rem;
+    height: 3.125rem;
+    padding: 0.65rem 1rem !important;
+    box-sizing: border-box;
+    line-height: 1.4;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff;
+    caret-color: var(--accent, #cfaa79);
+}
+
+.phone-field-row .phone-national-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    -webkit-text-fill-color: rgba(255, 255, 255, 0.5);
+}
+
+.phone-field-row .phone-national-input:-webkit-autofill,
+.phone-field-row .phone-national-input:-webkit-autofill:hover,
+.phone-field-row .phone-national-input:-webkit-autofill:focus {
+    -webkit-text-fill-color: #ffffff !important;
+    caret-color: var(--accent, #cfaa79);
+    transition: background-color 99999s ease-out;
+    box-shadow: 0 0 0 100px rgba(255, 255, 255, 0.08) inset !important;
+}
+
+@media (min-width: 640px) {
+    .phone-field-row .phone-country-select {
+        width: fit-content;
+        max-width: 110px;
+    }
 }
 
 .contact-textarea {
@@ -3594,9 +3676,96 @@ section {
         background-attachment: scroll;
     }
 
+    /* Home hero: stack layout, readable type, full-width CTAs */
+    .hero-parallax.hero-home {
+        min-height: auto !important;
+        padding: 120px 0 40px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        position: relative !important;
+    }
+
+    .hero-stats {
+        position: relative !important;
+        bottom: auto !important;
+        padding: 30px 0 20px !important;
+        margin-top: 20px !important;
+        width: 100% !important;
+    }
+
+    .hero-stats .container {
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 10px !important;
+    }
+
+    .stat-item {
+        min-width: 70px !important;
+        padding: 10px 12px !important;
+        flex: 0 1 auto !important;
+    }
+
+    .stat-number {
+        font-size: 1.25rem !important;
+    }
+
+    .stat-label {
+        font-size: 0.6rem !important;
+    }
+
+    .hero-content {
+        padding: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    .hero-content h1 {
+        font-size: 1.5rem !important;
+        line-height: 1.4 !important;
+        margin-bottom: 15px !important;
+    }
+
+    .hero-content p {
+        font-size: 0.95rem !important;
+        margin-bottom: 20px !important;
+    }
+
+    .scroll-indicator {
+        display: none !important;
+    }
+
+    .hero-content > div {
+        flex-direction: column !important;
+        gap: 12px !important;
+    }
+
+    .cta-btn {
+        width: 100% !important;
+        padding: 14px 20px !important;
+        font-size: 0.95rem !important;
+    }
+
     section {
         padding-top: 3rem;
         padding-bottom: 3rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-overlay {
+        animation: none;
+    }
+
+    .light-ray {
+        animation: none !important;
+    }
+
+    .wood-particle {
+        animation: none !important;
+    }
+
+    .decor-icon {
+        animation: none !important;
     }
 }
 

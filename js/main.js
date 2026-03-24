@@ -1,6 +1,6 @@
 /**
  * ==========================================
- * ورشة ايور للنجارة - AYUR WOODWORKING
+ * Gamra Wood Craft — كمرة للصناعة التقليدية الخشبية
  * Main JavaScript File
  * ==========================================
  */
@@ -41,14 +41,17 @@ document.addEventListener('DOMContentLoaded', function() {
                     pageLoader.parentNode.removeChild(pageLoader);
                 }
             }, 600);
-        }, 1200);
+        }, 750);
     }
 
+    var prefersReducedMotion = typeof window.matchMedia !== 'undefined' &&
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     AOS.init({
-        duration: 800,
+        duration: prefersReducedMotion ? 0 : 650,
         once: true,
-        offset: 100,
-        easing: 'ease-out-cubic'
+        offset: 80,
+        easing: 'ease-out-cubic',
+        disable: prefersReducedMotion
     });
 
     window.addEventListener('load', () => {
@@ -132,15 +135,22 @@ document.addEventListener('DOMContentLoaded', function() {
             .replace(/on\w+=/gi, '');
     }
 
+    /** Phone: allow digits, spaces, + - ( ) for international numbers */
+    function sanitizePhone(input) {
+        return String(input || '').trim()
+            .replace(/[<>\"'`;]/g, '')
+            .replace(/javascript:/gi, '')
+            .replace(/on\w+=/gi, '');
+    }
+
     function isValidEmail(email) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email.trim());
     }
 
     function isValidPhone(phone) {
-        const phoneRegex = /^[\d\s+\-()]*$/;
         const digitsOnly = phone.replace(/\D/g, '');
-        return phoneRegex.test(phone) && digitsOnly.length >= 8;
+        return digitsOnly.length >= 8 && digitsOnly.length <= 15;
     }
 
     function showFormFeedback(type, title, message, duration = 5000) {
@@ -249,7 +259,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const name = sanitizeInput(this.querySelector('input[name="name"]').value);
             const email = sanitizeInput(this.querySelector('input[name="email"]').value);
-            const phone = sanitizeInput(this.querySelector('input[name="phone"]').value);
+            const countryEl = document.getElementById('phoneCountrySelect');
+            const nationalEl = document.getElementById('phoneNationalInput');
+            let phone = '';
+            if (countryEl && nationalEl) {
+                phone = sanitizePhone((countryEl.value + ' ' + nationalEl.value).trim());
+            } else {
+                const legacy = this.querySelector('input[name="phone"]');
+                phone = legacy ? sanitizePhone(legacy.value) : '';
+            }
             const projectType = sanitizeInput(this.querySelector('select[name="project_type"]').value);
             const message = sanitizeInput(this.querySelector('textarea[name="message"]').value);
 
@@ -547,13 +565,40 @@ loadStoredTestimonials();
         fr: { open: "Ouvert", closed: "Fermé" }
     };
 
-    function updateStoreStatus() {
+    /**
+     * Workshop schedule is in Morocco (Africa/Casablanca), not the visitor's local timezone.
+     */
+    function getMoroccoWorkshopDateParts() {
         const now = new Date();
-        const day = now.getDay();
-        const hour = now.getHours();
+        const parts = new Intl.DateTimeFormat('en-US', {
+            timeZone: 'Africa/Casablanca',
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: false,
+            weekday: 'short'
+        }).formatToParts(now);
+        const map = {};
+        parts.forEach(function (p) {
+            if (p.type !== 'literal') map[p.type] = p.value;
+        });
+        const wdayShort = String(map.weekday || '').replace(/\.$/, '');
+        const wdayMap = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
+        const day = wdayMap[wdayShort];
+        const hour = parseInt(map.hour, 10);
+        const minute = parseInt(map.minute, 10);
+        return {
+            day: typeof day === 'number' ? day : 0,
+            hour: isNaN(hour) ? 0 : hour,
+            minute: isNaN(minute) ? 0 : minute
+        };
+    }
+
+    function updateStoreStatus() {
+        const { day, hour } = getMoroccoWorkshopDateParts();
 
         const dayNameElement = document.getElementById('current-day-name');
         const statusElement = document.getElementById('status-badge');
+        const clockEl = document.getElementById('morocco-workshop-clock');
 
         const lang = (typeof getCurrentLang === 'function' ? getCurrentLang() : null) || localStorage.getItem('siteLang') || 'ar';
         const days = dayNames[lang] || dayNames.ar;
@@ -562,23 +607,36 @@ loadStoredTestimonials();
         if (dayNameElement) dayNameElement.innerText = days[day];
 
         let isOpen = false;
-        
-        // Monday to Thursday: 8h00 - 19h00
+
+        // Monday–Thursday: 08:00–19:00 (Morocco)
         if (day >= 1 && day <= 4 && hour >= 8 && hour < 19) {
             isOpen = true;
-        }
-        // Friday: 9h00 - 14h00
-        else if (day === 5 && hour >= 9 && hour < 14) {
+        } else if (day === 5 && hour >= 9 && hour < 14) {
             isOpen = true;
-        }
-        // Saturday: 9h00 - 16h00
-        else if (day === 6 && hour >= 9 && hour < 16) {
+        } else if (day === 6 && hour >= 9 && hour < 16) {
             isOpen = true;
         }
 
         if (statusElement) {
             statusElement.innerText = isOpen ? labels.open : labels.closed;
-            statusElement.className = isOpen ? "px-2 py-1 rounded text-sm font-medium bg-green-500/20 text-green-400" : "px-2 py-1 rounded text-sm font-medium bg-red-500/20 text-red-400";
+            statusElement.className = isOpen ? 'px-2 py-1 rounded text-sm font-medium bg-green-500/20 text-green-400' : 'px-2 py-1 rounded text-sm font-medium bg-red-500/20 text-red-400';
+        }
+
+        if (clockEl) {
+            const locale = lang === 'ar' ? 'ar-MA' : lang === 'fr' ? 'fr-FR' : 'en-US';
+            const timeStr = new Intl.DateTimeFormat(locale, {
+                timeZone: 'Africa/Casablanca',
+                weekday: 'long',
+                hour: 'numeric',
+                minute: '2-digit',
+                hour12: false
+            }).format(new Date());
+            const prefix = {
+                ar: 'الوقت في الورشة (المغرب):',
+                en: 'Workshop time (Morocco):',
+                fr: 'Heure de l’atelier (Maroc) :'
+            };
+            clockEl.textContent = (prefix[lang] || prefix.en) + ' ' + timeStr;
         }
 
         const yearElement = document.getElementById('year');

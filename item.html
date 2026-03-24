@@ -6,17 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="تفاصيل العمل - كمرة للصناعة التقليدية الخشبية">
     <meta name="keywords" content="نجارة, أثاث, تصميم داخلي, مغربي">
-    <meta name="author" content="Ayour Wood Workshop">
+    <meta name="author" content="Gamra Wood Craft">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://ayourwood.github.io/item.html">
+    <link rel="canonical" href="https://gamrawoodcraft.github.io/item.html">
     <title data-ar="تفاصيل العمل | كمرة للصناعة التقليدية الخشبية" data-en="Work Details | Gamra Wood Craft" data-fr="Détails du travail | L'artisanat gamra bois">تفاصيل العمل | كمرة للصناعة التقليدية الخشبية</title>
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ayourwood.github.io/item.html">
+    <meta property="og:url" content="https://gamrawoodcraft.github.io/item.html">
     <meta property="og:title" content="تفاصيل العمل | Gamra Wood Craft">
     <meta property="og:description" content="ورشة نجارة مغربية عالية الجودة">
-    <meta property="og:image" content="https://ayourwood.github.io/mylogo.png">
+    <meta property="og:image" content="https://gamrawoodcraft.github.io/mylogo.png">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
@@ -49,7 +49,7 @@
             <div class="flex items-center justify-between">
                 <a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity duration-300">
                     <div class="w-10 h-10 rounded-full bg-gradient-to-br from-accent-light to-accent-dark flex items-center justify-center">
-                        <img src="mylogo.png" class="w-full h-full object-contain" onerror="this.src='https://github.com/ayourwood.png'">
+                        <img src="mylogo.png" class="w-full h-full object-contain" onerror="this.src='https://github.com/mylogo.png'">
                     </div>
                     <div>
                         <h1 class="text-lg font-bold heading-font text-white" data-ar="كمرة للصناعة التقليدية الخشبية" data-en="Gamra Wood Craft" data-fr="L'artisanat gamra bois">كمرة للصناعة التقليدية الخشبية</h1>
@@ -255,7 +255,7 @@
                 </a>
             </div>
             <p class="text-white/60 text-sm">
-                &copy; <span class="font-semibold text-accent" id="year">2026</span> <span style="color: var(--accent);" data-ar="كمرة للصناعة التقليدية الخشبية" data-en="Gamra Wood Craft" data-fr="L'artisanat gamra bois ">كمرة للخشب</span>
+                &copy; <span class="font-semibold text-accent" id="year">2026</span> <span style="color: var(--accent);" data-ar="كمرة للصناعة التقليدية الخشبية" data-en="Gamra Wood Craft" data-fr="L'artisanat gamra bois">كمرة للصناعة التقليدية الخشبية</span>
             </p>
         </div>
     </footer>
@@ -277,12 +277,17 @@
     
     <!-- Initialize AOS -->
     <script>
-        // Initialize AOS animations
-        AOS.init({
-            duration: 600,
-            once: true,
-            offset: 50
-        });
+        (function () {
+            var reduced = typeof window.matchMedia !== 'undefined' &&
+                window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            AOS.init({
+                duration: reduced ? 0 : 650,
+                once: true,
+                offset: 80,
+                easing: 'ease-out-cubic',
+                disable: reduced
+            });
+        })();
     </script>
 </body>
 </html>

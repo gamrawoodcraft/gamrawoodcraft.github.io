@@ -364,6 +364,12 @@
 
 
 @media (max-width: 640px) {
+    .portfolio-hero {
+        height: 100vh !important;
+        min-height: 100vh !important;
+        padding-top: 100px;
+        overflow: hidden;
+    }
     #portfolioGallery {
         gap: 1rem;
     }
@@ -490,8 +496,10 @@
 }
 .search-modal-content {
     animation: slideUp 0.3s ease;
-    max-height: calc(100vh - 120px);
-    overflow-y: auto;
+    height: 100vh !important;
+    min-height: 100vh !important;
+    padding-top: 120px;
+    overflow: hidden;
     z-index: 999;
     position: relative;
 }

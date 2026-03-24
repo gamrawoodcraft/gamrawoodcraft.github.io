@@ -3676,13 +3676,17 @@ section {
         background-attachment: scroll;
     }
 
-    /* Home hero: stack layout, readable type, full-width CTAs */
+    /* Home hero: full screen like portfolio */
     .hero-parallax.hero-home {
-        min-height: auto !important;
-        padding: 120px 0 40px !important;
+        height: 100vh !important;
+        min-height: 100vh !important;
+        padding-top: 120px !important;
+        padding-bottom: 40px !important;
         display: flex !important;
         flex-direction: column !important;
+        justify-content: center !important;
         position: relative !important;
+        overflow: hidden !important;
     }
 
     .hero-stats {

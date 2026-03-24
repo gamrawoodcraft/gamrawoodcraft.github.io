@@ -1171,17 +1171,5 @@
     },
     "filter": "decor",
     "icon": "fa-gem"
-  },
-  {
-    "id": "test",
-    "category": "{\"ar\":\"test\",\"en\":\"test\",\"fr\":\"test\"}",
-    "title": "{\"ar\":\"test\",\"en\":\"test\",\"fr\":\"test\"}",
-    "description": "{\"ar\":\"test\",\"en\":\"test\",\"fr\":\"test\"}",
-    "image": "assets/images/test.jpg",
-    "features": "{\"ar\":[\"5\",\"4\",\"3\",\"2\",\"1\"],\"en\":[\"5\",\"4\",\"3\",\"2\",\"1\"],\"fr\":[\"5\",\"4\",\"3\",\"2\",\"1\"]}",
-    "materials": "{\"ar\":[\"t\"],\"en\":[\"test\",\"test\"],\"fr\":[\"test\"]}",
-    "dimensions": "{\"width\":\"2020cm\",\"height\":\"2020cm\",\"depth\":\"2020cm\"}",
-    "filter": "test",
-    "icon": "fa-gem"
   }
 ]

@@ -8,13 +8,6 @@ Premium multilingual website (EN/FR/AR) for a Moroccan handcrafted woodworking b
 - Tailwind CSS
 - API route with Zod validation for quote form
 
-## Quick Start
-1. Install dependencies:
-   npm install
-2. Start development server:
-   npm run dev
-3. Open browser:
-   http://localhost:3000
 
 ## Routes
 - /en, /fr, /ar

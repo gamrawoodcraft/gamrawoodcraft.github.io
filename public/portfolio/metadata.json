@@ -1,0 +1,164 @@
+﻿[
+    {
+        "file":  "kitchen-1.jpg",
+        "title":  "Modern Moroccan Kitchen",
+        "category":  "Kitchen",
+        "summary":  "Modern kitchen design with Moroccan heritage touch, using finest wood types with elegant gold finishing. Features practical storage spaces and integrated LED lighting.",
+        "country":  "International",
+        "featured":  true,
+        "order":  1
+    },
+    {
+        "file":  "bedroom-1.jpg",
+        "title":  "Royal Bedroom",
+        "category":  "Bedroom",
+        "summary":  "Luxurious bedroom with gold finishing and intricate hand-made details. Includes built-in wardrobe and decorated bedside table.",
+        "country":  "International",
+        "featured":  true,
+        "order":  2
+    },
+    {
+        "file":  "living-room.jpg",
+        "title":  "Luxury Reception Hall",
+        "category":  "Living Room",
+        "summary":  "Reception hall with modern design combining elegance and comfort. Features built-in TV unit and display shelves.",
+        "country":  "International",
+        "featured":  true,
+        "order":  3
+    },
+    {
+        "file":  "kitchen-2.jpg",
+        "title":  "Open Kitchen",
+        "category":  "Kitchen",
+        "summary":  "Open kitchen to the living room with modern contemporary design. Features central island and organized storage spaces.",
+        "country":  "International",
+        "featured":  false,
+        "order":  4
+    },
+    {
+        "file":  "decor-1.jpg",
+        "title":  "Decorative Wall Unit",
+        "category":  "Decor",
+        "summary":  "Artistic decor piece with hand-carved Moroccan patterns. Ideal for decorating living room or entrance walls.",
+        "country":  "International",
+        "featured":  false,
+        "order":  5
+    },
+    {
+        "file":  "decor-2.jpg",
+        "title":  "Classic Cabinet",
+        "category":  "Decor",
+        "summary":  "Classic cabinet with modern design combining heritage and contemporary. Features adjustable shelves and glass doors.",
+        "country":  "International",
+        "featured":  false,
+        "order":  6
+    },
+    {
+        "file":  "door-french.jpg",
+        "title":  "French Door",
+        "category":  "Door",
+        "summary":  "Elegant French door with transparent glass providing natural light while maintaining privacy.",
+        "country":  "International",
+        "featured":  false,
+        "order":  7
+    },
+    {
+        "file":  "bedroom-master.jpg",
+        "title":  "Master Bedroom",
+        "category":  "Bedroom",
+        "summary":  "Luxury master bedroom with high-end finishing and custom furniture.",
+        "country":  "International",
+        "featured":  false,
+        "order":  8
+    },
+    {
+        "file":  "bedroom-guest.jpg",
+        "title":  "Guest Room",
+        "category":  "Bedroom",
+        "summary":  "Guest bedroom with comfortable and luxurious design providing enjoyable stay for visitors.",
+        "country":  "International",
+        "featured":  false,
+        "order":  9
+    },
+    {
+        "file":  "bedroom-kids.jpg",
+        "title":  "Kids Room",
+        "category":  "Bedroom",
+        "summary":  "Kids room with fun and safe design with bright colors and practical storage.",
+        "country":  "International",
+        "featured":  false,
+        "order":  10
+    },
+    {
+        "file":  "sofa.jpg",
+        "title":  "Classic Sofa",
+        "category":  "Living Room",
+        "summary":  "Luxurious classic sofa with hand finishing and comfortable natural leather.",
+        "country":  "International",
+        "featured":  false,
+        "order":  11
+    },
+    {
+        "file":  "door-entrance.jpg",
+        "title":  "Entrance Door",
+        "category":  "Door",
+        "summary":  "Main entrance door with luxurious finishing providing security and elegance.",
+        "country":  "International",
+        "featured":  true,
+        "order":  12
+    },
+    {
+        "file":  "door-interior.jpg",
+        "title":  "Interior Door",
+        "category":  "Door",
+        "summary":  "Elegant interior door providing privacy while maintaining design aesthetics.",
+        "country":  "International",
+        "featured":  false,
+        "order":  13
+    },
+    {
+        "file":  "tv-console.jpg",
+        "title":  "TV Console",
+        "category":  "Living Room",
+        "summary":  "Contemporary TV console with device storage and display spaces.",
+        "country":  "International",
+        "featured":  true,
+        "order":  14
+    },
+    {
+        "file":  "dining-table.jpg",
+        "title":  "Dining Table",
+        "category":  "Living Room",
+        "summary":  "Luxurious family dining table with design combining beauty and practicality.",
+        "country":  "International",
+        "featured":  true,
+        "order":  15
+    },
+    {
+        "file":  "coffee-table.jpg",
+        "title":  "Coffee Table",
+        "category":  "Decor",
+        "summary":  "Carefully designed coffee table with unique handcrafted details.",
+        "country":  "International",
+        "featured":  false,
+        "order":  16
+    },
+    {
+        "file":  "bookshelf.jpg",
+        "title":  "Bookshelf",
+        "category":  "Decor",
+        "summary":  "Elegant bookshelf with display spaces for books and art pieces.",
+        "country":  "International",
+        "featured":  false,
+        "order":  17
+    },
+    {
+        "file":  "table-side.jpg",
+        "title":  "Side Table",
+        "category":  "Decor",
+        "summary":  "Practical side table with elegant design complementing any living room.",
+        "country":  "International",
+        "featured":  false,
+        "order":  18
+    }
+]

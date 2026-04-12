@@ -1,0 +1,26 @@
+{
+  "name": "v1",
+  "version": "1.0.0",
+  "description": "A responsive, multilingual (EN, FR, AR) static website for a custom wood furniture business built with HTML5, CSS3, and JavaScript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tailwind:build": "tailwindcss -c tailwind.config.js -i ./css/tailwind.input.css -o ./css/tailwind.css --minify",
+    "tailwind:watch": "tailwindcss -c tailwind.config.js -i ./css/tailwind.input.css -o ./css/tailwind.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/el-guemra-br/gamrawcraft-v1o1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/el-guemra-br/gamrawcraft-v1o1/issues"
+  },
+  "homepage": "https://github.com/el-guemra-br/gamrawcraft-v1o1#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

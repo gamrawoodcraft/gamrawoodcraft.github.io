@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gamra Wood Craft | Custom Woodwork in Morocco</title>
+  <meta name="description" content="Custom woodwork for homes, interiors, and fitted pieces. Handcrafted with Moroccan joinery and modern finishes.">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f8f4ed',
+              100: '#eee4d5',
+              200: '#e2d2bb',
+              700: '#8f6f57',
+              900: '#231b16'
+            }
+          },
+          fontFamily: {
+            sans: ['Poppins', 'Arial', 'sans-serif'],
+            display: ['Cairo', 'Arial', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/components.css">
+
+  <script defer src="/js/i18n.js"></script>
+  <script defer src="/js/app.js"></script>
+  <script defer src="/js/portfolio.js?v=2"></script>
+</head>
+<body class="bg-brand-50 text-brand-900 font-sans antialiased">
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <a href="/">Gamra Wood Craft</a>
+      </div>
+
+      <nav class="nav">
+        <a href="/" data-i18n="nav.home">Home</a>
+        <a href="/services.html" data-i18n="nav.services">Services</a>
+        <a href="/portfolio.html" data-i18n="nav.portfolio">Portfolio</a>
+        <a href="/about.html" data-i18n="nav.about">About</a>
+        <a href="/#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+
+      <div class="language-switcher">
+        <button data-language="en" class="active">EN</button>
+        <button data-language="fr">FR</button>
+        <button data-language="ar">العربية</button>
+      </div>
+
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <main class="mx-auto">
+    <section class="hero">
+      <div class="container hero-shell">
+        <div class="hero-copy">
+          <p class="eyebrow" data-i18n="hero.eyebrow">Custom woodwork for homes and projects</p>
+          <h1 data-i18n="hero.headline">Custom woodwork shaped for the room it lives in</h1>
+          <p class="hero-lead" data-i18n="hero.subheading">Handcrafted furniture, doors, and fitted pieces with Moroccan joinery and modern finishes.</p>
+
+          <div class="hero-actions">
+            <a href="#portfolio" class="btn btn-primary shadow-xl shadow-brand-900/10" data-i18n="hero.cta">View Work</a>
+            <a href="#contact" class="btn btn-secondary ring-1 ring-brand-900/20 hover:ring-brand-900/35" data-i18n="hero.secondaryCta">Start a Project</a>
+          </div>
+
+          <div class="hero-points">
+            <span data-i18n="hero.point1">Made to measure</span>
+            <span data-i18n="hero.point2">Natural finishes</span>
+            <span data-i18n="hero.point3">Built to last</span>
+          </div>
+
+          <div class="hero-kpis" aria-label="Studio highlights">
+            <div class="hero-kpi">
+              <strong>10+</strong>
+              <span>Years Crafting</span>
+            </div>
+            <div class="hero-kpi">
+              <strong>100%</strong>
+              <span>Made to Order</span>
+            </div>
+            <div class="hero-kpi">
+              <strong>AR EN FR</strong>
+              <span>Client Languages</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-visual-panel">
+            <span class="hero-visual-inlay hero-visual-inlay-1"></span>
+            <span class="hero-visual-inlay hero-visual-inlay-2"></span>
+            <span class="hero-visual-inlay hero-visual-inlay-3"></span>
+            <div class="hero-visual-block hero-visual-block-main"></div>
+            <div class="hero-visual-block hero-visual-block-side"></div>
+            <div class="hero-visual-badge hero-visual-badge-top">Taroudant Atelier</div>
+            <div class="hero-visual-badge hero-visual-badge-bottom">Moroccan Joinery</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-intro md:max-w-3xl">
+          <p class="section-label" data-i18n="about.eyebrow">Studio notes</p>
+          <h2 data-i18n="about.title">About Gamra Wood Craft</h2>
+          <p class="section-copy" data-i18n="about.description">We build custom pieces from measured plans, selected timber, and finishes matched to the room.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card studio-card">
+            <span class="card-meta" data-i18n="about.card1Title">Measured on site</span>
+            <h3 data-i18n="about.card1Description">Every piece starts with the space it needs to fit.</h3>
+          </article>
+
+          <article class="card studio-card">
+            <span class="card-meta" data-i18n="about.card2Title">Made to order</span>
+            <h3 data-i18n="about.card2Description">Cabinets, wardrobes, doors, and fitted storage built for the brief.</h3>
+          </article>
+
+          <article class="card studio-card">
+            <span class="card-meta" data-i18n="about.card3Title">Finished by hand</span>
+            <h3 data-i18n="about.card3Description">Clean joinery, calm finishes, and details that hold up over time.</h3>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background-color: rgba(255, 255, 255, 0.34);">
+      <div class="container">
+        <div class="section-intro md:max-w-3xl">
+          <p class="section-label" data-i18n="services.title">Our Services</p>
+          <h2 data-i18n="services.title">Built around the room</h2>
+          <p class="section-subtitle" data-i18n="services.description">We make custom wood pieces for kitchens, bedrooms, doors, and fitted interiors.</p>
+        </div>
+
+        <div class="grid-4">
+          <div class="card service-card">
+            <h3 data-i18n="services.kitchen">Kitchen Furniture</h3>
+            <p>Cabinets, islands, and shelving built around the actual room.</p>
+          </div>
+          <div class="card service-card">
+            <h3 data-i18n="services.bedroom">Bedroom Furniture</h3>
+            <p>Wardrobes, bed frames, and bedside pieces sized to fit cleanly.</p>
+          </div>
+          <div class="card service-card">
+            <h3 data-i18n="services.living">Living Room Furniture</h3>
+            <p>Shelves, tables, and media units with a calm, practical finish.</p>
+          </div>
+          <div class="card service-card">
+            <h3 data-i18n="services.doors">Custom Doors</h3>
+            <p>Entry and interior doors made with measured joinery and balanced proportions.</p>
+          </div>
+          <div class="card service-card">
+            <h3 data-i18n="services.decor">Decorative Pieces</h3>
+            <p>Wood objects, panels, and accents shaped for specific interiors.</p>
+          </div>
+          <div class="card service-card">
+            <h3 data-i18n="services.outdoor">Outdoor Furniture</h3>
+            <p>Benches and garden pieces selected for use outside.</p>
+          </div>
+          <div class="card service-card">
+            <h3 data-i18n="services.restoration">Restoration & Repair</h3>
+            <p>Repair and restoration for heirloom pieces and older furniture.</p>
+          </div>
+          <div class="card service-card">
+            <h3>Custom Design</h3>
+            <p>One off pieces designed from your measurements and priorities.</p>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: var(--spacing-2xl);">
+          <a href="/services.html" class="btn btn-primary" data-i18n="services.cta">See All Services</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="portfolio">
+      <div class="container">
+        <div class="section-intro">
+          <p class="section-label" data-i18n="portfolio.title">Our Portfolio</p>
+          <h2 data-i18n="portfolio.title">Selected Work</h2>
+          <p class="section-subtitle" data-i18n="portfolio.description">Selected pieces from kitchens, wardrobes, doors, and fitted storage.</p>
+        </div>
+
+        <div class="portfolio-grid grid-3"></div>
+
+        <div style="text-align: center; margin-top: var(--spacing-2xl);">
+          <a href="/portfolio.html" class="btn btn-primary" data-i18n="portfolio.cta">View Full Portfolio</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background-color: rgba(226, 210, 187, 0.38);">
+      <div class="container">
+        <div class="section-intro">
+          <p class="section-label" data-i18n="process.title">Our Process</p>
+          <h2 data-i18n="process.title">How the work moves</h2>
+          <p class="section-subtitle">Clear steps, direct communication, and a finish that matches the plan.</p>
+        </div>
+
+        <div class="grid-4">
+          <div class="card process-step">
+            <div class="process-number">1</div>
+            <h3 data-i18n="process.step1">Consultation</h3>
+            <p data-i18n="process.step1Description">We review the room, the use, and the finish you want.</p>
+          </div>
+          <div class="card process-step">
+            <div class="process-number">2</div>
+            <h3 data-i18n="process.step2">Design</h3>
+            <p data-i18n="process.step2Description">We shape the layout and dimensions to the actual space.</p>
+          </div>
+          <div class="card process-step">
+            <div class="process-number">3</div>
+            <h3 data-i18n="process.step3">Crafting</h3>
+            <p data-i18n="process.step3Description">The piece is built with joinery, sanding, and finishing by hand.</p>
+          </div>
+          <div class="card process-step">
+            <div class="process-number">4</div>
+            <h3 data-i18n="process.step4">Delivery</h3>
+            <p data-i18n="process.step4Description">We deliver and install with the final fit checked on site.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-intro">
+          <p class="section-label" data-i18n="contact.title">Get In Touch</p>
+          <h2 data-i18n="contact.title">Start a project</h2>
+          <p class="section-subtitle" data-i18n="contact.description">Tell us what you need, and we will shape the first proposal around it.</p>
+        </div>
+
+        <div class="grid-2" style="gap: 2rem;">
+          <div>
+            <form action="https://formspree.io/f/mvzblzep" method="POST">
+              <input type="text" name="name" data-i18n-placeholder="contact.name" placeholder="Name" required>
+              <input type="email" name="email" data-i18n-placeholder="contact.email" placeholder="Email" required>
+              <input type="tel" name="phone" data-i18n-placeholder="contact.phone" placeholder="Phone">
+              <textarea name="message" data-i18n-placeholder="contact.message" placeholder="Message" required></textarea>
+              <button type="submit" class="btn btn-primary" data-i18n="contact.submit" style="width: 100%;">Send Message</button>
+            </form>
+          </div>
+
+          <div>
+            <h3 data-i18n="contact.hours">Business Hours</h3>
+            <div class="contact-info" style="margin-bottom: var(--spacing-lg);">
+              <p data-i18n="footer.hoursMonThu">Monday to Thursday: 08:00 to 19:00</p>
+              <p data-i18n="footer.hoursFriday">Friday: 09:00 to 14:00</p>
+              <p data-i18n="footer.hoursSaturday">Saturday: 09:00 to 16:00</p>
+              <p data-i18n="footer.hoursSunday">Sunday: Closed</p>
+            </div>
+
+            <h3 style="margin-top: var(--spacing-xl);" data-i18n="footer.contactTitle">Location & Contact</h3>
+            <div class="contact-info contact-card card">
+              <p class="icon-row"><span class="icon icon-location" aria-hidden="true"></span><span data-i18n="footer.address">Taroudant, Mhaïta, Souss-Massa Region, Morocco</span></p>
+              <p class="icon-row"><span class="icon icon-phone" aria-hidden="true"></span><span data-i18n="footer.phone">+212 728 886 642</span></p>
+              <p class="icon-row"><span class="icon icon-email" aria-hidden="true"></span><span data-i18n="footer.email">gamrawoodcraft@gmail.com</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h4>Gamra Wood Craft</h4>
+          <p data-i18n="footer.description">Creating custom woodwork with measured joinery and clean finishes since 2014.</p>
+          <div class="footer-socials">
+            <a href="https://www.facebook.com/gamrawoodcraft" title="Facebook" aria-label="Facebook"><span class="icon icon-facebook" aria-hidden="true"></span></a>
+            <a href="https://www.instagram.com/gamrawoodcraft" title="Instagram" aria-label="Instagram"><span class="icon icon-instagram" aria-hidden="true"></span></a>
+            <a href="https://wa.me/212728886642" title="WhatsApp" aria-label="WhatsApp"><span class="icon icon-whatsapp" aria-hidden="true"></span></a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h4 data-i18n="footer.quickLinks">Quick Links</h4>
+          <ul>
+            <li><a href="/" data-i18n="nav.home">Home</a></li>
+            <li><a href="/services.html" data-i18n="nav.services">Services</a></li>
+            <li><a href="/portfolio.html" data-i18n="nav.portfolio">Portfolio</a></li>
+            <li><a href="/about.html" data-i18n="nav.about">About</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4 data-i18n="footer.contactTitle">Contact</h4>
+          <div class="footer-contact">
+            <p class="icon-row"><span class="icon icon-location" aria-hidden="true"></span><span data-i18n="footer.address">Taroudant, Mhaïta, Souss-Massa Region, Morocco</span></p>
+            <p class="icon-row"><span class="icon icon-phone" aria-hidden="true"></span><span data-i18n="footer.phone">+212 728 886 642</span></p>
+            <p class="icon-row"><span class="icon icon-email" aria-hidden="true"></span><span data-i18n="footer.email">gamrawoodcraft@gmail.com</span></p>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h4 data-i18n="contact.hours">Hours</h4>
+          <div class="footer-hours">
+            <p data-i18n="footer.hoursMonThu"><strong>Monday to Thursday:</strong> 08:00 to 19:00</p>
+            <p data-i18n="footer.hoursFriday"><strong>Friday:</strong> 09:00 to 14:00</p>
+            <p data-i18n="footer.hoursSaturday"><strong>Saturday:</strong> 09:00 to 16:00</p>
+            <p data-i18n="footer.hoursSunday"><strong>Sunday:</strong> Closed</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p data-i18n="footer.rights">© 2024 Gamra Wood Craft. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="/privacy-terms/privacy-policy.html" data-i18n="footer.privacy">Privacy Policy</a>
+          <a href="/privacy-terms/terms-conditions.html" data-i18n="footer.terms">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

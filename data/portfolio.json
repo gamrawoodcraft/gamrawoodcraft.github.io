@@ -1,0 +1,101 @@
+[
+  {
+    "id": 1,
+    "title": "Modern Kitchen Set",
+    "category": "kitchen",
+    "image": "/assets/images/portfolio-1.jpg",
+    "description_en": "Custom-built kitchen furniture with integrated storage solutions",
+    "description_fr": "Mobilier de cuisine construit sur mesure avec solutions de rangement intégrées",
+    "description_ar": "أثاث مطبخ مخصص مع حلول تخزين متكاملة",
+    "materials": "Oak wood, stainless steel hardware",
+    "specs": "Width: 3m, Height: 2.5m, Depth: 0.6m"
+  },
+  {
+    "id": 2,
+    "title": "Bedroom Wardrobe",
+    "category": "bedroom",
+    "image": "/assets/images/portfolio-2.jpg",
+    "description_en": "Elegant bedroom wardrobe with mirrored doors",
+    "description_fr": "Élégante armoire de chambre avec portes miroir",
+    "description_ar": "خزانة غرفة نوم أنيقة بأبواب معكوسة",
+    "materials": "Walnut wood, mirror glass",
+    "specs": "Width: 2m, Height: 2.8m, Depth: 0.5m"
+  },
+  {
+    "id": 3,
+    "title": "Living Room Shelves",
+    "category": "living",
+    "image": "/assets/images/portfolio-3.jpg",
+    "description_en": "Floating shelves with hidden brackets for minimalist look",
+    "description_fr": "Étagères flottantes avec supports masqués pour un look minimaliste",
+    "description_ar": "رفوف عائمة بأقواس مخفية لمظهر بسيط",
+    "materials": "Pine wood, steel brackets",
+    "specs": "Width: 1.5m per shelf, Depth: 0.3m"
+  },
+  {
+    "id": 4,
+    "title": "Custom Door Set",
+    "category": "doors",
+    "image": "/assets/images/portfolio-4.jpg",
+    "description_en": "Handcrafted wooden doors with intricate designs",
+    "description_fr": "Portes en bois fabriquées à la main avec des designs complexes",
+    "description_ar": "أبواب خشبية مصنوعة يدويًا برسومات معقدة",
+    "materials": "Cedar wood, brass handles",
+    "specs": "Width: 1m, Height: 2.3m"
+  },
+  {
+    "id": 5,
+    "title": "Decorative Box Set",
+    "category": "decor",
+    "image": "/assets/images/portfolio-5.jpg",
+    "description_en": "Set of decorative wooden boxes with hand-carved details",
+    "description_fr": "Ensemble de boîtes décoratives en bois avec détails sculptés à la main",
+    "description_ar": "مجموعة من الصناديق الخشبية الزينة مع تفاصيل منحوتة يدويًا",
+    "materials": "Mahogany wood, brass inlay",
+    "specs": "Various sizes available"
+  },
+  {
+    "id": 6,
+    "title": "Garden Bench",
+    "category": "outdoor",
+    "image": "/assets/images/portfolio-6.jpg",
+    "description_en": "Weather-resistant outdoor bench for gardens",
+    "description_fr": "Banc d'extérieur résistant aux intempéries pour les jardins",
+    "description_ar": "مقعد خارجي مقاوم للطقس للحدائق",
+    "materials": "Teak wood, stainless steel",
+    "specs": "Width: 1.8m, Height: 0.9m, Depth: 0.6m"
+  },
+  {
+    "id": 7,
+    "title": "Restored Heritage Chair",
+    "category": "restoration",
+    "image": "/assets/images/portfolio-7.jpg",
+    "description_en": "Antique chair restored to original beauty",
+    "description_fr": "Chaise antique restaurée à sa beauté originale",
+    "description_ar": "كرسي عتيق تم استعادته إلى جماله الأصلي",
+    "materials": "Original wood, new upholstery",
+    "specs": "Traditional design, fully functional"
+  },
+  {
+    "id": 8,
+    "title": "Kitchen Island",
+    "category": "kitchen",
+    "image": "/assets/images/portfolio-8.jpg",
+    "description_en": "Central kitchen island with seating and storage",
+    "description_fr": "Îlot de cuisine central avec places assises et rangement",
+    "description_ar": "جزيرة مطبخ مركزية مع مقاعد وتخزين",
+    "materials": "Maple wood, granite countertop",
+    "specs": "Width: 1.5m, Height: 1m, Depth: 0.8m"
+  },
+  {
+    "id": 9,
+    "title": "Bedroom Nightstand",
+    "category": "bedroom",
+    "image": "/assets/images/portfolio-9.jpg",
+    "description_en": "Sleek nightstand with drawer storage",
+    "description_fr": "Petite table de nuit élégante avec rangement en tiroir",
+    "description_ar": "طاولة سرير أنيقة مع تخزين الأدراج",
+    "materials": "Cherry wood, soft-close hinges",
+    "specs": "Width: 0.6m, Height: 0.7m, Depth: 0.4m"
+  }
+]

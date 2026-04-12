@@ -1,0 +1,93 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "language": "Language",
+  "hero": {
+    "eyebrow": "Custom woodwork for homes and projects",
+    "headline": "Custom woodwork shaped for the room it lives in",
+    "subheading": "Handcrafted furniture, doors, and fitted pieces with Moroccan joinery and modern finishes.",
+    "cta": "View Work",
+    "secondaryCta": "Start a Project",
+    "point1": "Made to measure",
+    "point2": "Natural finishes",
+    "point3": "Built to last"
+  },
+  "about": {
+    "eyebrow": "Studio notes",
+    "title": "About Gamra Wood Craft",
+    "description": "We build custom pieces from measured plans, selected timber, and finishes matched to the room.",
+    "card1Title": "Measured on site",
+    "card1Description": "Every piece starts with the space it needs to fit.",
+    "card2Title": "Made to order",
+    "card2Description": "Cabinets, wardrobes, doors, and fitted storage built for the brief.",
+    "card3Title": "Finished by hand",
+    "card3Description": "Clean joinery, calm finishes, and details that hold up over time.",
+    "cta": "Learn More"
+  },
+  "services": {
+    "title": "Our Services",
+    "description": "We make custom wood pieces for kitchens, bedrooms, doors, and fitted interiors.",
+    "kitchen": "Kitchen Furniture",
+    "bedroom": "Bedroom Furniture",
+    "living": "Living Room Furniture",
+    "doors": "Custom Doors",
+    "decor": "Decorative Pieces",
+    "outdoor": "Outdoor Furniture",
+    "restoration": "Restoration & Repair",
+    "cta": "See All Services"
+  },
+  "portfolio": {
+    "title": "Our Portfolio",
+    "description": "Selected pieces from kitchens, wardrobes, doors, and fitted storage.",
+    "viewProject": "View Project",
+    "allCategories": "All Categories",
+    "cta": "View Full Portfolio"
+  },
+  "process": {
+    "title": "Our Process",
+    "step1": "Consultation",
+    "step1Description": "We review the room, the use, and the finish you want.",
+    "step2": "Design",
+    "step2Description": "We shape the layout and dimensions to the actual space.",
+    "step3": "Crafting",
+    "step3Description": "The piece is built with joinery, sanding, and finishing by hand.",
+    "step4": "Delivery",
+    "step4Description": "We deliver and install with the final fit checked on site."
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "description": "Tell us what you need, and we will shape the first proposal around it.",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Message",
+    "submit": "Send Message",
+    "hours": "Business Hours",
+    "mondayFriday": "Monday to Friday: 9:00 AM to 6:00 PM",
+    "saturday": "Saturday: 10:00 AM to 4:00 PM",
+    "sunday": "Sunday: Closed"
+  },
+  "footer": {
+    "description": "Creating custom woodwork with measured joinery and clean finishes since 2014.",
+    "contactTitle": "Contact",
+    "quickLinks": "Quick Links",
+    "address": "Taroudant, Mhaïta, Souss-Massa Region, Morocco",
+    "phone": "+212 728 886 642",
+    "email": "gamrawoodcraft@gmail.com",
+    "website": "https://gamrawoodcraft.github.io/",
+    "hoursMonThu": "Monday to Thursday: 08:00 to 19:00",
+    "hoursFriday": "Friday: 09:00 to 14:00",
+    "hoursSaturday": "Saturday: 09:00 to 16:00",
+    "hoursSunday": "Sunday: Closed",
+    "rights": "© 2024 Gamra Wood Craft. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms & Conditions"
+  },
+  "notFound": "Page not found",
+  "backHome": "Back to Home"
+}

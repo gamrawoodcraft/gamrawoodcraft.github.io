@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Gamra Wood Craft</title>
+  <meta name="description" content="Learn about Gamra Wood Craft's history, values, and commitment to handmade wooden furniture.">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f8f4ed',
+              100: '#eee4d5',
+              200: '#e2d2bb',
+              700: '#8f6f57',
+              900: '#231b16'
+            }
+          },
+          fontFamily: {
+            sans: ['Poppins', 'Arial', 'sans-serif'],
+            display: ['Cairo', 'Arial', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/components.css">
+
+  <!-- i18n and App Scripts -->
+  <script defer src="/js/i18n.js"></script>
+  <script defer src="/js/app.js"></script>
+</head>
+<body class="bg-brand-50 text-brand-900 font-sans antialiased">
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <a href="/">Gamra Wood Craft</a>
+      </div>
+
+      <nav class="nav">
+        <a href="/" data-i18n="nav.home">Home</a>
+        <a href="/services.html" data-i18n="nav.services">Services</a>
+        <a href="/portfolio.html" data-i18n="nav.portfolio">Portfolio</a>
+        <a href="/about.html" data-i18n="nav.about">About</a>
+        <a href="/#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+
+      <div class="language-switcher">
+        <button data-language="en" class="active">EN</button>
+        <button data-language="fr">FR</button>
+        <button data-language="ar">العربية</button>
+      </div>
+
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Page Hero -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1 data-i18n="about.title">About Gamra Wood Craft</h1>
+        <p>Heritage Moroccan woodworking shaped with modern design.</p>
+      </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="section">
+      <div class="container">
+        <div class="grid-2" style="gap: 3rem; align-items: center;">
+          <div>
+            <h2>Our Story</h2>
+            <p>Gamra Wood Craft was founded with a simple vision: to create exceptional wooden furniture that combines traditional Moroccan craftsmanship with contemporary design. What started as a small workshop in the heart of Gamra has grown into a respected name in custom furniture.</p>
+            <p>For over a decade, we've been dedicated to perfecting our craft, working with premium materials, and building lasting relationships with our clients. Every piece we create tells a story of passion, skill, and commitment to excellence.</p>
+            <p>Our artisans carry forward techniques passed down through generations, infusing each piece with authentic character and uncompromising quality.</p>
+          </div>
+          <div>
+            <img src="/assets/images/about-story.jpg" alt="Our Workshop" style="border-radius: var(--radius-lg); width: 100%;">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Values -->
+    <section class="section" style="background-color: var(--color-light-gray);">
+      <div class="container">
+        <h2 class="section-title">Our Values</h2>
+
+        <div class="grid-3">
+          <div class="card">
+            <h3>Craftsmanship</h3>
+            <p>Every detail matters. We take pride in the quality of our work, from the selection of materials to the final finish.</p>
+          </div>
+          <div class="card">
+            <h3>Sustainability</h3>
+            <p>We source our materials responsibly and create pieces built to last generations, reducing waste and environmental impact.</p>
+          </div>
+          <div class="card">
+            <h3>Collaboration</h3>
+            <p>We listen to our clients and work closely with you to bring your vision to life, ensuring complete satisfaction.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Process -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">How We Work</h2>
+
+        <div class="grid-4">
+          <div style="text-align: center;">
+            <div class="process-number" style="margin: 0 auto var(--spacing-md);">1</div>
+            <h3 data-i18n="process.step1">Consultation</h3>
+            <p>We meet with you to understand your needs, style preferences, and space requirements.</p>
+          </div>
+          <div style="text-align: center;">
+            <div class="process-number" style="margin: 0 auto var(--spacing-md);">2</div>
+            <h3 data-i18n="process.step2">Design</h3>
+            <p>Our designers create custom sketches and plans tailored specifically to your project.</p>
+          </div>
+          <div style="text-align: center;">
+            <div class="process-number" style="margin: 0 auto var(--spacing-md);">3</div>
+            <h3 data-i18n="process.step3">Crafting</h3>
+            <p>Our artisans hand-craft your piece using traditional techniques and premium materials.</p>
+          </div>
+          <div style="text-align: center;">
+            <div class="process-number" style="margin: 0 auto var(--spacing-md);">4</div>
+            <h3 data-i18n="process.step4">Delivery</h3>
+            <p>We ensure perfect installation and delivery, with full support and care.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="section" style="background-color: var(--color-beige);">
+      <div class="container">
+        <h2 class="section-title">Meet Our Artisans</h2>
+        <p style="text-align: center; font-size: var(--text-lg); margin-bottom: var(--spacing-2xl); color: var(--color-taupe);">
+          Our team of skilled craftspeople brings decades of combined experience to every project.
+        </p>
+
+        <div class="grid-3">
+          <div class="card" style="text-align: center;">
+            <img src="/assets/images/artisan-1.jpg" alt="Master Craftsman" style="width: 100%; height: 300px; object-fit: cover; border-radius: var(--radius-lg); margin-bottom: var(--spacing-md);">
+            <h3>Master Craftsman</h3>
+            <p>With 20+ years of experience, leading our workshop with exceptional skill and vision.</p>
+          </div>
+          <div class="card" style="text-align: center;">
+            <img src="/assets/images/artisan-2.jpg" alt="Senior Artisan" style="width: 100%; height: 300px; object-fit: cover; border-radius: var(--radius-lg); margin-bottom: var(--spacing-md);">
+            <h3>Senior Artisan</h3>
+            <p>Specializing in intricate designs and restoration work with meticulous attention to detail.</p>
+          </div>
+          <div class="card" style="text-align: center;">
+            <img src="/assets/images/artisan-3.jpg" alt="Design Specialist" style="width: 100%; height: 300px; object-fit: cover; border-radius: var(--radius-lg); margin-bottom: var(--spacing-md);">
+            <h3>Design Specialist</h3>
+            <p>Bringing creative vision to life, ensuring each custom piece reflects our high standards.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Why Choose Gamra Wood Craft?</h2>
+
+        <div class="grid-2" style="gap: 3rem;">
+          <div>
+            <h3>Custom Made to Order</h3>
+            <p>Every piece is handcrafted specifically for you, ensuring it perfectly fits your space and style.</p>
+
+            <h3 style="margin-top: var(--spacing-lg);">Premium Materials</h3>
+            <p>We source the finest woods and materials, ensuring durability and beauty that stands the test of time.</p>
+
+            <h3 style="margin-top: var(--spacing-lg);">Expert Craftsmanship</h3>
+            <p>Our artisans combine traditional techniques with modern Design sensibilities for exceptional results.</p>
+          </div>
+
+          <div>
+            <h3>Personal Service</h3>
+            <p>We work closely with you throughout the entire process, from concept to delivery and beyond.</p>
+
+            <h3 style="margin-top: var(--spacing-lg);">Clear Project Scope</h3>
+            <p>Quality handmade furniture at fair prices, with transparent communication on costs and timelines.</p>
+
+            <h3 style="margin-top: var(--spacing-lg);">Lifetime Support</h3>
+            <p>We stand behind our work with ongoing support, maintenance advice, and restoration services.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section" style="background-color: var(--color-black); color: white; text-align: center;">
+      <div class="container">
+        <h2 style="color: white;">Ready to Work With Us?</h2>
+        <p style="font-size: var(--text-lg); margin: var(--spacing-lg) 0; color: var(--color-beige);">Let's create a piece that fits the room and the brief.</p>
+        <a href="/#contact" class="btn btn-primary">Contact Us Today</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h4>Gamra Wood Craft</h4>
+          <p data-i18n="footer.description">Creating custom woodwork with measured joinery and clean finishes since 2014.</p>
+          <div class="footer-socials">
+            <a href="https://www.facebook.com/gamrawoodcraft" title="Facebook" aria-label="Facebook"><span class="icon icon-facebook" aria-hidden="true"></span></a>
+            <a href="https://www.instagram.com/gamrawoodcraft" title="Instagram" aria-label="Instagram"><span class="icon icon-instagram" aria-hidden="true"></span></a>
+            <a href="https://wa.me/212728886642" title="WhatsApp" aria-label="WhatsApp"><span class="icon icon-whatsapp" aria-hidden="true"></span></a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h4 data-i18n="footer.quickLinks">Quick Links</h4>
+          <ul>
+            <li><a href="/" data-i18n="nav.home">Home</a></li>
+            <li><a href="/services.html" data-i18n="nav.services">Services</a></li>
+            <li><a href="/portfolio.html" data-i18n="nav.portfolio">Portfolio</a></li>
+            <li><a href="/about.html" data-i18n="nav.about">About</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4 data-i18n="footer.contactTitle">Contact</h4>
+          <div class="footer-contact">
+            <p class="icon-row"><span class="icon icon-location" aria-hidden="true"></span><span data-i18n="footer.address">Taroudant, Mhaïta, Souss-Massa Region, Morocco</span></p>
+            <p class="icon-row"><span class="icon icon-phone" aria-hidden="true"></span><span data-i18n="footer.phone">+212 728 886 642</span></p>
+            <p class="icon-row"><span class="icon icon-email" aria-hidden="true"></span><span data-i18n="footer.email">gamrawoodcraft@gmail.com</span></p>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h4 data-i18n="contact.hours">Hours</h4>
+          <div class="footer-hours">
+            <p data-i18n="footer.hoursMonThu"><strong>Monday to Thursday:</strong> 08:00 to 19:00</p>
+            <p data-i18n="footer.hoursFriday"><strong>Friday:</strong> 09:00 to 14:00</p>
+            <p data-i18n="footer.hoursSaturday"><strong>Saturday:</strong> 09:00 to 16:00</p>
+            <p data-i18n="footer.hoursSunday"><strong>Sunday:</strong> Closed</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p data-i18n="footer.rights">© 2024 Gamra Wood Craft. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="/privacy-terms/privacy-policy.html" data-i18n="footer.privacy">Privacy Policy</a>
+          <a href="/privacy-terms/terms-conditions.html" data-i18n="footer.terms">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

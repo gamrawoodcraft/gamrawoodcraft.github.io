@@ -1,0 +1,93 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "about": "À propos",
+    "contact": "Contact"
+  },
+  "language": "Langue",
+  "hero": {
+    "eyebrow": "Travail du bois sur mesure pour les maisons et les projets",
+    "headline": "Un travail du bois sur mesure, pensé pour l'espace qui l'accueille",
+    "subheading": "Meubles, portes et éléments intégrés fabriqués à la main avec une menuiserie marocaine et des finitions modernes.",
+    "cta": "Voir le travail",
+    "secondaryCta": "Lancer un projet",
+    "point1": "Dimensions précises",
+    "point2": "Finitions naturelles",
+    "point3": "Conçu pour durer"
+  },
+  "about": {
+    "eyebrow": "Notes de l'atelier",
+    "title": "À propos de Gamra Wood Craft",
+    "description": "Nous réalisons des pièces sur mesure à partir de plans relevés, d'essences choisies, et de finitions adaptées à la pièce.",
+    "card1Title": "Relevé sur place",
+    "card1Description": "Chaque pièce commence par l'espace qu'elle doit occuper.",
+    "card2Title": "Fabriqué sur commande",
+    "card2Description": "Armoires, portes et rangements intégrés réalisés selon le besoin réel.",
+    "card3Title": "Fini à la main",
+    "card3Description": "Une menuiserie nette, des finitions calmes, et des détails qui tiennent dans le temps.",
+    "cta": "En savoir plus"
+  },
+  "services": {
+    "title": "Nos Services",
+    "description": "Nous réalisons des pièces en bois sur mesure pour les cuisines, chambres, portes et aménagements intégrés.",
+    "kitchen": "Meubles de Cuisine",
+    "bedroom": "Meubles de Chambre",
+    "living": "Meubles de Salon",
+    "doors": "Portes Personnalisées",
+    "decor": "Pièces Décoratives",
+    "outdoor": "Meubles d'Extérieur",
+    "restoration": "Restauration et Réparation",
+    "cta": "Voir tous les services"
+  },
+  "portfolio": {
+    "title": "Notre portfolio",
+    "description": "Pièces sélectionnées parmi des cuisines, armoires, portes et rangements intégrés.",
+    "viewProject": "Voir le Projet",
+    "allCategories": "Toutes les catégories",
+    "cta": "Voir le portfolio complet"
+  },
+  "process": {
+    "title": "Notre Processus",
+    "step1": "Consultation",
+    "step1Description": "Nous examinons la pièce, l'usage et la finition souhaitée.",
+    "step2": "Conception",
+    "step2Description": "Nous ajustons le plan et les dimensions à l'espace réel.",
+    "step3": "Création",
+    "step3Description": "La pièce est réalisée à la main, avec assemblage, ponçage et finition.",
+    "step4": "Livraison",
+    "step4Description": "Nous livrons et installons en vérifiant l'ajustement final sur place."
+  },
+  "contact": {
+    "title": "Nous Contacter",
+    "description": "Dites nous ce qu'il vous faut, et nous préparerons une première proposition adaptée.",
+    "name": "Nom",
+    "email": "E-mail",
+    "phone": "Téléphone",
+    "message": "Message",
+    "submit": "Envoyer le Message",
+    "hours": "Heures d'Ouverture",
+    "mondayFriday": "Lundi au vendredi : 9h00 à 18h00",
+    "saturday": "Samedi : 10h00 à 16h00",
+    "sunday": "Dimanche : Fermé"
+  },
+  "footer": {
+    "description": "Nous créons des ouvrages en bois sur mesure avec une menuiserie précise et des finitions sobres depuis 2014.",
+    "contactTitle": "Contact",
+    "quickLinks": "Liens Rapides",
+    "address": "Taroudant, Mhaïta, région de Souss-Massa, Maroc",
+    "phone": "+212 728 886 642",
+    "email": "gamrawoodcraft@gmail.com",
+    "website": "https://gamrawoodcraft.github.io/",
+    "hoursMonThu": "Du lundi au jeudi : 08h00 à 19h00",
+    "hoursFriday": "Vendredi : 09h00 à 14h00",
+    "hoursSaturday": "Samedi : 09h00 à 16h00",
+    "hoursSunday": "Dimanche : fermé",
+    "rights": "© 2024 Gamra Bois Artisanat. Tous droits réservés.",
+    "privacy": "Politique de Confidentialité",
+    "terms": "Conditions Générales"
+  },
+  "notFound": "Page non trouvée",
+  "backHome": "Retour à l'Accueil"
+}

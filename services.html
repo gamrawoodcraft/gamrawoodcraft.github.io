@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services - Gamra Wood Craft</title>
+  <meta name="description" content="Explore our custom wood furniture services: kitchen, bedroom, living room, doors, decor, outdoor, and restoration.">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f8f4ed',
+              100: '#eee4d5',
+              200: '#e2d2bb',
+              700: '#8f6f57',
+              900: '#231b16'
+            }
+          },
+          fontFamily: {
+            sans: ['Poppins', 'Arial', 'sans-serif'],
+            display: ['Cairo', 'Arial', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/components.css">
+
+  <!-- i18n and App Scripts -->
+  <script defer src="/js/i18n.js"></script>
+  <script defer src="/js/app.js"></script>
+</head>
+<body class="bg-brand-50 text-brand-900 font-sans antialiased">
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <a href="/">Gamra Wood Craft</a>
+      </div>
+
+      <nav class="nav">
+        <a href="/" data-i18n="nav.home">Home</a>
+        <a href="/services.html" data-i18n="nav.services">Services</a>
+        <a href="/portfolio.html" data-i18n="nav.portfolio">Portfolio</a>
+        <a href="/about.html" data-i18n="nav.about">About</a>
+        <a href="/#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+
+      <div class="language-switcher">
+        <button data-language="en" class="active">EN</button>
+        <button data-language="fr">FR</button>
+        <button data-language="ar">العربية</button>
+      </div>
+
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Page Hero -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1 data-i18n="services.title">Our Services</h1>
+        <p data-i18n="services.description">We specialize in custom wood furniture for every space</p>
+      </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="section">
+      <div class="container">
+        <div class="grid-2" style="gap: 3rem; margin-bottom: var(--spacing-2xl);">
+          <!-- Kitchen Furniture -->
+          <div>
+            <img src="/assets/images/service-kitchen.jpg" alt="Kitchen Furniture" style="border-radius: var(--radius-lg); width: 100%; margin-bottom: var(--spacing-lg);">
+            <h2 data-i18n="services.kitchen">Kitchen Furniture</h2>
+            <p>Transform your kitchen with custom-built furniture. From sleek modern cabinets to traditional designs, we create functional and beautiful pieces that maximize your space.</p>
+            <p>Our kitchen solutions include custom islands, cabinetry, shelving, and built-in seating.</p>
+            <a href="/#contact" class="btn btn-primary">Request a Quote</a>
+          </div>
+
+          <!-- Bedroom Furniture -->
+          <div>
+            <img src="/assets/images/service-bedroom.jpg" alt="Bedroom Furniture" style="border-radius: var(--radius-lg); width: 100%; margin-bottom: var(--spacing-lg);">
+            <h2 data-i18n="services.bedroom">Bedroom Furniture</h2>
+            <p>Create your perfect sanctuary with bespoke bedroom furniture. From elegant wardrobes to comfortable bed frames and nightstands, we design pieces that reflect your style.</p>
+            <p>Each bedroom project is customized to fit your space perfectly and match your aesthetic preferences.</p>
+            <a href="/#contact" class="btn btn-primary">Request a Quote</a>
+          </div>
+        </div>
+
+        <div class="grid-2" style="gap: 3rem; margin-bottom: var(--spacing-2xl);">
+          <!-- Living Room Furniture -->
+          <div>
+            <img src="/assets/images/service-living.jpg" alt="Living Room Furniture" style="border-radius: var(--radius-lg); width: 100%; margin-bottom: var(--spacing-lg);">
+            <h2 data-i18n="services.living">Living Room Furniture</h2>
+            <p>Design the heart of your home with custom living room furniture. Floating shelves, entertainment units, coffee tables, and more—all crafted to elevate your space.</p>
+            <p>We work with you to create pieces that are both beautiful and functional for modern living.</p>
+            <a href="/#contact" class="btn btn-primary">Request a Quote</a>
+          </div>
+
+          <!-- Custom Doors -->
+          <div>
+            <img src="/assets/images/service-doors.jpg" alt="Custom Doors" style="border-radius: var(--radius-lg); width: 100%; margin-bottom: var(--spacing-lg);">
+            <h2 data-i18n="services.doors">Custom Doors</h2>
+            <p>Make a statement with handcrafted wooden doors. From intricate designs to minimalist styles, our doors are works of art that enhance any entryway.</p>
+            <p>Each door is built to last with premium materials and expert craftsmanship.</p>
+            <a href="/#contact" class="btn btn-primary">Request a Quote</a>
+          </div>
+        </div>
+
+        <div class="grid-2" style="gap: 3rem; margin-bottom: var(--spacing-2xl);">
+          <!-- Decorative Pieces -->
+          <div>
+            <img src="/assets/images/service-decor.jpg" alt="Decorative Pieces" style="border-radius: var(--radius-lg); width: 100%; margin-bottom: var(--spacing-lg);">
+            <h2 data-i18n="services.decor">Decorative Pieces</h2>
+            <p>Add personality to your home with unique wooden decorative pieces. Hand-carved boxes, sculptures, frames, and more that showcase traditional artistry.</p>
+            <p>Perfect as gifts or to elevate your home decor with authentic craftsmanship.</p>
+            <a href="/#contact" class="btn btn-primary">Request a Quote</a>
+          </div>
+
+          <!-- Outdoor Furniture -->
+          <div>
+            <img src="/assets/images/service-outdoor.jpg" alt="Outdoor Furniture" style="border-radius: var(--radius-lg); width: 100%; margin-bottom: var(--spacing-lg);">
+            <h2 data-i18n="services.outdoor">Outdoor Furniture</h2>
+            <p>Enjoy your outdoor space with weather-resistant wood furniture. Benches, tables, and seating made with premium materials that withstand the elements.</p>
+            <p>Our outdoor pieces combine durability with natural beauty for timeless appeal.</p>
+            <a href="/#contact" class="btn btn-primary">Request a Quote</a>
+          </div>
+        </div>
+
+        <div class="grid-2" style="gap: 3rem;">
+          <!-- Restoration & Repair -->
+          <div>
+            <img src="/assets/images/service-restoration.jpg" alt="Restoration" style="border-radius: var(--radius-lg); width: 100%; margin-bottom: var(--spacing-lg);">
+            <h2 data-i18n="services.restoration">Restoration & Repair</h2>
+            <p>Restore antique and heirloom furniture to its original beauty. Our expert artisans carefully repair, refinish, and restore wooden pieces with authentic techniques.</p>
+            <p>Preserve your family treasures and give old pieces new life.</p>
+            <a href="/#contact" class="btn btn-primary">Request a Quote</a>
+          </div>
+
+          <!-- Custom Design -->
+          <div>
+            <img src="/assets/images/service-custom.jpg" alt="Custom Design" style="border-radius: var(--radius-lg); width: 100%; margin-bottom: var(--spacing-lg);">
+            <h2>Custom Design</h2>
+            <p>Have a unique vision? We create fully custom furniture tailored to your exact specifications. From concept to completion, we work closely with you every step of the way.</p>
+            <p>No project is too ambitious—we love bringing bold ideas to life.</p>
+            <a href="/#contact" class="btn btn-primary">Start Your Project</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section" style="background-color: var(--color-beige);">
+      <div class="container" style="text-align: center;">
+        <h2 data-i18n="contact.title">Ready to Transform Your Space?</h2>
+        <p style="font-size: var(--text-lg); margin: var(--spacing-lg) 0;">Let's collaborate on your custom furniture project</p>
+        <a href="/#contact" class="btn btn-primary">Contact Us Today</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h4>Gamra Wood Craft</h4>
+          <p data-i18n="footer.description">Creating custom woodwork with measured joinery and clean finishes since 2014.</p>
+          <div class="footer-socials">
+            <a href="https://www.facebook.com/gamrawoodcraft" title="Facebook" aria-label="Facebook"><span class="icon icon-facebook" aria-hidden="true"></span></a>
+            <a href="https://www.instagram.com/gamrawoodcraft" title="Instagram" aria-label="Instagram"><span class="icon icon-instagram" aria-hidden="true"></span></a>
+            <a href="https://wa.me/212728886642" title="WhatsApp" aria-label="WhatsApp"><span class="icon icon-whatsapp" aria-hidden="true"></span></a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h4 data-i18n="footer.quickLinks">Quick Links</h4>
+          <ul>
+            <li><a href="/" data-i18n="nav.home">Home</a></li>
+            <li><a href="/services.html" data-i18n="nav.services">Services</a></li>
+            <li><a href="/portfolio.html" data-i18n="nav.portfolio">Portfolio</a></li>
+            <li><a href="/about.html" data-i18n="nav.about">About</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4 data-i18n="footer.contactTitle">Contact</h4>
+          <div class="footer-contact">
+            <p class="icon-row"><span class="icon icon-location" aria-hidden="true"></span><span data-i18n="footer.address">Taroudant, Mhaïta, Souss-Massa Region, Morocco</span></p>
+            <p class="icon-row"><span class="icon icon-phone" aria-hidden="true"></span><span data-i18n="footer.phone">+212 728 886 642</span></p>
+            <p class="icon-row"><span class="icon icon-email" aria-hidden="true"></span><span data-i18n="footer.email">gamrawoodcraft@gmail.com</span></p>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h4 data-i18n="contact.hours">Hours</h4>
+          <div class="footer-hours">
+            <p data-i18n="footer.hoursMonThu"><strong>Monday to Thursday:</strong> 08:00 to 19:00</p>
+            <p data-i18n="footer.hoursFriday"><strong>Friday:</strong> 09:00 to 14:00</p>
+            <p data-i18n="footer.hoursSaturday"><strong>Saturday:</strong> 09:00 to 16:00</p>
+            <p data-i18n="footer.hoursSunday"><strong>Sunday:</strong> Closed</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p data-i18n="footer.rights">© 2024 Gamra Wood Craft. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="/privacy-terms/privacy-policy.html" data-i18n="footer.privacy">Privacy Policy</a>
+          <a href="/privacy-terms/terms-conditions.html" data-i18n="footer.terms">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

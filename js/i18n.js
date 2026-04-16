@@ -72,7 +72,7 @@ function updatePageLanguage() {
     element.value = t(key);
   });
 }
-
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
 // Apply RTL if needed
 function applyRTL() {
   const html = document.documentElement;

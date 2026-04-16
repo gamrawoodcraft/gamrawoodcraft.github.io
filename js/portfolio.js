@@ -25,15 +25,19 @@ function displayPortfolio(filtered = null) {
     const lang = window.i18n?.getLanguage?.() || 'en';
     const description = item[`description_${lang}`] || item.description_en;
     const categoryLabel = item.category ? item.category.replace(/_/g, ' ') : 'Project';
+    const thumbMarkup = item.image
+      ? `<img src="${item.image}" alt="${item.title}" loading="lazy" style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius-lg); margin-bottom: var(--spacing-md);">`
+      : `
+      <div class="portfolio-thumb" aria-hidden="true">
+        <span class="portfolio-thumb-label">${categoryLabel}</span>
+        <strong class="portfolio-thumb-title">${item.title}</strong>
+      </div>`;
 
     const card = document.createElement('div');
     card.className = 'card portfolio-card';
     card.dataset.category = item.category;
     card.innerHTML = `
-      <div class="portfolio-thumb" aria-hidden="true">
-        <span class="portfolio-thumb-label">${categoryLabel}</span>
-        <strong class="portfolio-thumb-title">${item.title}</strong>
-      </div>
+      ${thumbMarkup}
       <h3 class="card-title">${item.title}</h3>
       <p class="card-description">${description}</p>
       <a href="/item.html?id=${item.id}" class="btn btn-primary" style="display: inline-block; margin-top: var(--spacing-md); width: 100%; text-align: center;">
@@ -87,15 +91,19 @@ function displayPortfolioDetail() {
 
   const lang = window.i18n?.getLanguage?.() || 'en';
   const description = item[`description_${lang}`] || item.description_en;
+  const detailImageMarkup = item.image
+    ? `<img src="${item.image}" alt="${item.title}" class="item-image" loading="lazy">`
+    : `
+      <div class="item-image item-image-placeholder" aria-hidden="true">
+        <span class="portfolio-thumb-label">${item.category}</span>
+        <strong class="portfolio-thumb-title">${item.title}</strong>
+      </div>`;
 
   const detailContainer = document.querySelector('.item-detail');
   if (detailContainer) {
     detailContainer.innerHTML = `
       <div class="item-gallery">
-        <div class="item-image item-image-placeholder" aria-hidden="true">
-          <span class="portfolio-thumb-label">${item.category}</span>
-          <strong class="portfolio-thumb-title">${item.title}</strong>
-        </div>
+        ${detailImageMarkup}
       </div>
       <div class="item-info">
         <h1>${item.title}</h1>

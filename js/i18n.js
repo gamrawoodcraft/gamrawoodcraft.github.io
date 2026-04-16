@@ -2,6 +2,19 @@
 let currentLanguage = localStorage.getItem('language') || 'en';
 let translations = {};
 
+function syncDocumentLanguage() {
+  const html = document.documentElement;
+  if (currentLanguage === 'ar') {
+    html.setAttribute('dir', 'rtl');
+    html.setAttribute('lang', 'ar');
+  } else {
+    html.setAttribute('dir', 'ltr');
+    html.setAttribute('lang', currentLanguage);
+  }
+}
+
+syncDocumentLanguage();
+
 // Load all language files
 async function loadLanguages() {
   try {
@@ -79,6 +92,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   await loadLanguages();
   applyRTL();
   updatePageLanguage();
+  document.documentElement.classList.add('i18n-ready');
 });
 
 // Make functions globally available

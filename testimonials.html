@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testimonials - Gamra Wood Craft</title>
+  <meta name="description" content="Read client testimonials about our custom woodwork, from kitchens and wardrobes to doors and fitted pieces.">
+  <link rel="stylesheet" href="/css/tailwind.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <script defer src="/js/i18n.js"></script>
+  <script defer src="/js/app.js"></script>
+  <style>
+    .testimonial-hero {
+      padding: clamp(3.5rem, 7vw, 6rem) 0 2rem;
+    }
+
+    .testimonial-hero-shell {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
+      gap: clamp(1.5rem, 4vw, 3rem);
+      align-items: end;
+    }
+
+    .testimonial-kpis {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .testimonial-kpi {
+      padding: 1rem 1.1rem;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(35, 27, 22, 0.08);
+      box-shadow: 0 18px 38px rgba(35, 27, 22, 0.06);
+    }
+
+    .testimonial-kpi strong {
+      display: block;
+      font-size: clamp(1.4rem, 2vw, 2.2rem);
+      line-height: 1;
+      margin-bottom: 0.35rem;
+    }
+
+    .testimonial-kpi span {
+      display: block;
+      color: rgba(35, 27, 22, 0.74);
+      font-size: 0.95rem;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.35rem;
+      margin-top: 2rem;
+    }
+
+    .testimonial-card {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      min-height: 100%;
+    }
+
+    .testimonial-stars {
+      color: #d4a63a;
+      letter-spacing: 0.18em;
+      font-size: 1rem;
+    }
+
+    .testimonial-quote {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: rgba(35, 27, 22, 0.92);
+      margin: 0;
+    }
+
+    .testimonial-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-top: 0.9rem;
+      border-top: 1px solid rgba(35, 27, 22, 0.08);
+      margin-top: auto;
+      text-align: start;
+    }
+
+    .testimonial-meta strong,
+    .testimonial-meta span {
+      display: block;
+    }
+
+    .testimonial-meta strong {
+      font-size: 1rem;
+      margin-bottom: 0.15rem;
+    }
+
+    .testimonial-meta span {
+      color: rgba(35, 27, 22, 0.68);
+      font-size: 0.92rem;
+    }
+
+    .testimonial-cta {
+      margin-top: 2rem;
+      padding: clamp(1.5rem, 3vw, 2.2rem);
+      border-radius: 28px;
+      background: linear-gradient(135deg, rgba(74, 55, 40, 0.96), rgba(42, 34, 27, 0.96));
+      color: var(--color-white);
+      box-shadow: 0 22px 48px rgba(35, 27, 22, 0.18);
+    }
+
+    .testimonial-cta p {
+      color: rgba(247, 242, 234, 0.86);
+      margin-bottom: 1.2rem;
+      max-width: 58ch;
+    }
+
+    .testimonial-cta .btn-primary {
+      background: var(--color-white);
+      color: var(--color-black);
+      border-color: transparent;
+    }
+
+    .testimonial-cta .btn-primary:hover {
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    @media (max-width: 900px) {
+      .testimonial-hero-shell {
+        grid-template-columns: 1fr;
+      }
+
+      .testimonial-kpis {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body class="bg-brand-50 text-brand-900 font-sans antialiased">
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <a href="/">Gamra Wood Craft</a>
+      </div>
+
+      <nav class="nav">
+        <a href="/" data-i18n="nav.home">Home</a>
+        <a href="/services.html" data-i18n="nav.services">Services</a>
+        <a href="/portfolio.html" data-i18n="nav.portfolio">Portfolio</a>
+        <a href="/testimonials.html" data-i18n="nav.testimonials">Testimonials</a>
+        <a href="/about.html" data-i18n="nav.about">About</a>
+        <a href="/#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+
+      <div class="language-switcher">
+        <button data-language="en">EN</button>
+        <button data-language="fr">FR</button>
+        <button data-language="ar">AR</button>
+      </div>
+
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="testimonial-hero">
+      <div class="container testimonial-hero-shell">
+        <div>
+          <p class="section-label" data-i18n="testimonials.eyebrow">Client feedback</p>
+          <h1 data-i18n="testimonials.title">What clients say</h1>
+          <p class="section-subtitle" data-i18n="testimonials.heroSubtitle">A few words from recent projects, from first measurements to final installation.</p>
+
+          <div class="testimonial-kpis" aria-label="Client highlights">
+            <div class="testimonial-kpi">
+              <strong data-i18n="testimonials.stat1Value">4.9/5</strong>
+              <span data-i18n="testimonials.stat1Label">Average rating</span>
+            </div>
+            <div class="testimonial-kpi">
+              <strong data-i18n="testimonials.stat2Value">30+</strong>
+              <span data-i18n="testimonials.stat2Label">Custom projects</span>
+            </div>
+            <div class="testimonial-kpi">
+              <strong data-i18n="testimonials.stat3Value">3</strong>
+              <span data-i18n="testimonials.stat3Label">Languages supported</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card testimonial-card">
+          <span class="card-meta" data-i18n="testimonials.eyebrow">Client feedback</span>
+          <h3 data-i18n="testimonials.title">What clients say</h3>
+          <p class="testimonial-quote" data-i18n="testimonials.heroSubtitle">A few words from recent projects, from first measurements to final installation.</p>
+          <div class="testimonial-stars" aria-hidden="true">★★★★★</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="testimonial-grid">
+          <article class="card testimonial-card">
+            <div class="testimonial-stars" aria-hidden="true">★★★★★</div>
+            <p class="testimonial-quote" data-i18n="testimonials.card1Quote">The wardrobes were measured perfectly, installed cleanly, and the finish matched the room exactly.</p>
+            <div class="testimonial-meta">
+              <div>
+                <strong data-i18n="testimonials.card1Name">Private client</strong>
+                <span data-i18n="testimonials.card1Role">Bedroom project</span>
+              </div>
+              <span data-i18n="testimonials.card1Location">Taroudant</span>
+            </div>
+          </article>
+
+          <article class="card testimonial-card">
+            <div class="testimonial-stars" aria-hidden="true">★★★★★</div>
+            <p class="testimonial-quote" data-i18n="testimonials.card2Quote">They turned a difficult kitchen layout into a practical workspace that feels calm and well built.</p>
+            <div class="testimonial-meta">
+              <div>
+                <strong data-i18n="testimonials.card2Name">Private client</strong>
+                <span data-i18n="testimonials.card2Role">Kitchen project</span>
+              </div>
+              <span data-i18n="testimonials.card2Location">Agadir</span>
+            </div>
+          </article>
+
+          <article class="card testimonial-card">
+            <div class="testimonial-stars" aria-hidden="true">★★★★★</div>
+            <p class="testimonial-quote" data-i18n="testimonials.card3Quote">The team was careful on site, and the doors feel solid, balanced, and finished with real care.</p>
+            <div class="testimonial-meta">
+              <div>
+                <strong data-i18n="testimonials.card3Name">Private client</strong>
+                <span data-i18n="testimonials.card3Role">Door project</span>
+              </div>
+              <span data-i18n="testimonials.card3Location">Marrakech</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="testimonial-cta">
+          <p class="section-label" data-i18n="testimonials.eyebrow">Client feedback</p>
+          <h2 data-i18n="testimonials.ctaTitle">Have a project in mind?</h2>
+          <p data-i18n="testimonials.ctaText">Share your measurements and we will help shape the right solution for your space.</p>
+          <a href="/#contact" class="btn btn-primary" data-i18n="testimonials.ctaButton">Start a project</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

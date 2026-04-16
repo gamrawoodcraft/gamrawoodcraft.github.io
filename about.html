@@ -9,10 +9,211 @@
 
 <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/css/base.css">
   <link rel="stylesheet" href="/css/components.css">
+
+  <style>
+    .guild-members .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: var(--spacing-xl) auto 0;
+    }
+
+    .guild-members .card-inner {
+      background-color: #2a221b;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: transform 0.3s ease;
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .guild-members .card-inner:hover {
+      transform: translateY(-10px);
+    }
+
+    .guild-members .photo-area {
+      padding: 40px 20px 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .guild-members .avatar-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      border: 4px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .guild-members .avatar-hassan {
+      background: #4a3728;
+    }
+
+    .guild-members .avatar-nadia {
+      background: #d2c1b3;
+    }
+
+    .guild-members .avatar-ibrahim {
+      background: #1a1715;
+    }
+
+    .guild-members .avatar-circle i.main-user {
+      font-size: 70px;
+    }
+
+    .guild-members .avatar-hassan i.main-user {
+      color: #e6c191;
+      opacity: 0.3;
+    }
+
+    .guild-members .avatar-nadia i.main-user {
+      color: #2a221b;
+      opacity: 0.4;
+    }
+
+    .guild-members .avatar-ibrahim i.main-user {
+      color: #e6c191;
+      opacity: 0.4;
+    }
+
+    .guild-members .role-badge {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 45px;
+      height: 45px;
+      background: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      color: #2a221b;
+      font-size: 1.2rem;
+      border: 2px solid #2a221b;
+    }
+
+    .guild-members .card-body {
+      padding: 10px 25px 30px;
+      text-align: center;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .guild-members .name-tag {
+      color: #fff;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 5px;
+      font-weight: 800;
+    }
+
+    .guild-members .label-tag {
+      color: #e6c191;
+      font-size: 0.75rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+      display: block;
+    }
+
+    .guild-members .description {
+      color: #d1d1d1;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 25px;
+      flex-grow: 1;
+    }
+
+    .guild-members .info-box {
+      padding: 15px;
+      border-radius: 6px;
+      text-align: left;
+      font-size: 0.85rem;
+      margin-top: auto;
+    }
+
+    .guild-members .craft-log {
+      background: rgba(0, 0, 0, 0.25);
+      border: 1px dashed var(--color-taupe);
+      color: var(--color-white);
+    }
+
+    .guild-members .relations-ledger {
+      background: #fdfaf7;
+      border-left: 4px solid #1a1a1a;
+      color: #1a1a1a;
+    }
+
+    .guild-members .dev-terminal {
+      background: rgba(0, 0, 0, 0.6);
+      font-family: 'Courier New', monospace;
+      color: #e6c191;
+      border-left: 3px solid #e6c191;
+    }
+
+    .guild-members .theme-wood {
+      border-top: 6px solid var(--color-taupe);
+    }
+
+    .guild-members .theme-liaison {
+      background: var(--color-taupe);
+      border-top: 6px solid #1a1a1a;
+    }
+
+    .guild-members .theme-liaison .name-tag,
+    .guild-members .theme-liaison .description {
+      color: #1a1a1a;
+    }
+
+    .guild-members .theme-liaison .label-tag {
+      color: #000;
+    }
+
+    .guild-members .theme-tech {
+      background: #1a1715;
+      border: 1px solid #e6c191;
+    }
+
+    .guild-members .card-footer {
+      padding: 15px 25px;
+      background: rgba(0, 0, 0, 0.2);
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: rgba(255, 255, 255, 0.5);
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .guild-members .theme-liaison .card-footer {
+      color: #2a221b;
+      border-color: rgba(0, 0, 0, 0.1);
+    }
+
+    body.rtl .guild-members .name-tag,
+    body.rtl .guild-members .label-tag,
+    body.rtl .guild-members .description {
+      text-align: center;
+    }
+  </style>
 
   <!-- i18n and App Scripts -->
   <script defer src="/js/i18n.js"></script>
@@ -30,14 +231,15 @@
         <a href="/" data-i18n="nav.home">Home</a>
         <a href="/services.html" data-i18n="nav.services">Services</a>
         <a href="/portfolio.html" data-i18n="nav.portfolio">Portfolio</a>
+        <a href="/testimonials.html" data-i18n="nav.testimonials">Testimonials</a>
         <a href="/about.html" data-i18n="nav.about">About</a>
         <a href="/#contact" data-i18n="nav.contact">Contact</a>
       </nav>
 
       <div class="language-switcher">
-        <button data-language="en" class="active">EN</button>
+        <button data-language="en">EN</button>
         <button data-language="fr">FR</button>
-        <button data-language="ar">العربية</button>
+        <button data-language="ar">AR</button>
       </div>
 
       <div class="hamburger">
@@ -54,7 +256,7 @@
     <section class="hero">
       <div class="hero-content">
         <h1 data-i18n="about.title">About Gamra Wood Craft</h1>
-        <p>Heritage Moroccan woodworking shaped with modern design.</p>
+        <p data-i18n="about.heroSubtitle">Heritage Moroccan woodworking shaped with modern design.</p>
       </div>
     </section>
 
@@ -63,13 +265,13 @@
       <div class="container">
         <div class="grid-2" style="gap: 3rem; align-items: center;">
           <div>
-            <h2>Our Story</h2>
-            <p>Gamra Wood Craft was founded with a simple vision: to create exceptional wooden furniture that combines traditional Moroccan craftsmanship with contemporary design. What started as a small workshop in the heart of Gamra has grown into a respected name in custom furniture.</p>
-            <p>For over a decade, we've been dedicated to perfecting our craft, working with premium materials, and building lasting relationships with our clients. Every piece we create tells a story of passion, skill, and commitment to excellence.</p>
-            <p>Our artisans carry forward techniques passed down through generations, infusing each piece with authentic character and uncompromising quality.</p>
+            <h2 data-i18n="about.storyTitle">Our Story</h2>
+            <p data-i18n="about.storyP1">Gamra Wood Craft was founded with a simple vision: to create exceptional wooden furniture that combines traditional Moroccan craftsmanship with contemporary design. What started as a small workshop in the heart of Gamra has grown into a respected name in custom furniture.</p>
+            <p data-i18n="about.storyP2">For over a decade, we have been dedicated to perfecting our craft, working with premium materials, and building lasting relationships with our clients. Every piece we create tells a story of passion, skill, and commitment to excellence.</p>
+            <p data-i18n="about.storyP3">Our artisans carry forward techniques passed down through generations, infusing each piece with authentic character and uncompromising quality.</p>
           </div>
           <div>
-            <img src="/assets/images/about-story.jpg" alt="Our Workshop" style="border-radius: var(--radius-lg); width: 100%;">
+            <img src="/assets/images/prodocts/pherosection.png" alt="Our Workshop" style="border-radius: var(--radius-lg); width: 100%;">
           </div>
         </div>
       </div>
@@ -78,20 +280,20 @@
     <!-- Our Values -->
     <section class="section" style="background-color: var(--color-light-gray);">
       <div class="container">
-        <h2 class="section-title">Our Values</h2>
+        <h2 class="section-title" data-i18n="about.valuesTitle">Our Values</h2>
 
         <div class="grid-3">
           <div class="card">
-            <h3>Craftsmanship</h3>
-            <p>Every detail matters. We take pride in the quality of our work, from the selection of materials to the final finish.</p>
+            <h3 data-i18n="about.valueCraftTitle">Craftsmanship</h3>
+            <p data-i18n="about.valueCraftDesc">Every detail matters. We take pride in the quality of our work, from the selection of materials to the final finish.</p>
           </div>
           <div class="card">
-            <h3>Sustainability</h3>
-            <p>We source our materials responsibly and create pieces built to last generations, reducing waste and environmental impact.</p>
+            <h3 data-i18n="about.valueSustainTitle">Sustainability</h3>
+            <p data-i18n="about.valueSustainDesc">We source our materials responsibly and create pieces built to last generations, reducing waste and environmental impact.</p>
           </div>
           <div class="card">
-            <h3>Collaboration</h3>
-            <p>We listen to our clients and work closely with you to bring your vision to life, ensuring complete satisfaction.</p>
+            <h3 data-i18n="about.valueCollabTitle">Collaboration</h3>
+            <p data-i18n="about.valueCollabDesc">We listen to our clients and work closely with you to bring your vision to life, ensuring complete satisfaction.</p>
           </div>
         </div>
       </div>
@@ -100,56 +302,109 @@
     <!-- Our Process -->
     <section class="section">
       <div class="container">
-        <h2 class="section-title">How We Work</h2>
+        <h2 class="section-title" data-i18n="about.howWeWorkTitle">How We Work</h2>
 
         <div class="grid-4">
           <div style="text-align: center;">
             <div class="process-number" style="margin: 0 auto var(--spacing-md);">1</div>
             <h3 data-i18n="process.step1">Consultation</h3>
-            <p>We meet with you to understand your needs, style preferences, and space requirements.</p>
+            <p data-i18n="about.process1Desc">We meet with you to understand your needs, style preferences, and space requirements.</p>
           </div>
           <div style="text-align: center;">
             <div class="process-number" style="margin: 0 auto var(--spacing-md);">2</div>
             <h3 data-i18n="process.step2">Design</h3>
-            <p>Our designers create custom sketches and plans tailored specifically to your project.</p>
+            <p data-i18n="about.process2Desc">Our designers create custom sketches and plans tailored specifically to your project.</p>
           </div>
           <div style="text-align: center;">
             <div class="process-number" style="margin: 0 auto var(--spacing-md);">3</div>
             <h3 data-i18n="process.step3">Crafting</h3>
-            <p>Our artisans hand-craft your piece using traditional techniques and premium materials.</p>
+            <p data-i18n="about.process3Desc">Our artisans hand-craft your piece using traditional techniques and premium materials.</p>
           </div>
           <div style="text-align: center;">
             <div class="process-number" style="margin: 0 auto var(--spacing-md);">4</div>
             <h3 data-i18n="process.step4">Delivery</h3>
-            <p>We ensure perfect installation and delivery, with full support and care.</p>
+            <p data-i18n="about.process4Desc">We ensure perfect installation and delivery, with full support and care.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Team Section -->
-    <section class="section" style="background-color: var(--color-beige);">
+    <section class="section guild-members" style="background-color: var(--color-white);">
       <div class="container">
-        <h2 class="section-title">Meet Our Artisans</h2>
-        <p style="text-align: center; font-size: var(--text-lg); margin-bottom: var(--spacing-2xl); color: var(--color-taupe);">
+        <h2 class="section-title" data-i18n="about.teamTitle">Meet Our Artisans</h2>
+        <p style="text-align: center; font-size: var(--text-lg); margin-bottom: var(--spacing-2xl); color: var(--color-taupe);" data-i18n="about.teamSubtitle">
           Our team of skilled craftspeople brings decades of combined experience to every project.
         </p>
 
-        <div class="grid-3">
-          <div class="card" style="text-align: center;">
-            <img src="/assets/images/artisan-1.jpg" alt="Master Craftsman" style="width: 100%; height: 300px; object-fit: cover; border-radius: var(--radius-lg); margin-bottom: var(--spacing-md);">
-            <h3>Master Craftsman</h3>
-            <p>With 20+ years of experience, leading our workshop with exceptional skill and vision.</p>
+        <div class="team-grid">
+          <div class="card-inner theme-wood">
+            <div class="photo-area">
+              <div class="avatar-circle avatar-hassan">
+                <i class="fas fa-user-circle main-user"></i>
+                <div class="role-badge"><i class="fas fa-hammer"></i></div>
+              </div>
+            </div>
+            <div class="card-body">
+              <h3 class="name-tag">Hassan</h3>
+              <span class="label-tag" data-i18n="about.guild.hassan.label">Master Woodworker</span>
+              <p class="description" data-i18n="about.guild.hassan.description">He is dedicated to preserving the soul of the forest. With over 20 years of expertise, he combines traditional joinery with intricate hand-carving to create heirloom pieces.</p>
+              <div class="info-box craft-log">
+                <span data-i18n="about.guild.hassan.info1">* 20+ Years Expertise</span><br>
+                <span data-i18n="about.guild.hassan.info2">* Joinery & Carving</span><br>
+                <span data-i18n="about.guild.hassan.info3">* Focus: Rare Timber</span>
+              </div>
+            </div>
+            <div class="card-footer">
+              <span><i class="fas fa-medal mr-1"></i> <span data-i18n="about.guild.hassan.footerLeft">Senior</span></span>
+              <span data-i18n="about.guild.hassan.footerRight">Production</span>
+            </div>
           </div>
-          <div class="card" style="text-align: center;">
-            <img src="/assets/images/artisan-2.jpg" alt="Senior Artisan" style="width: 100%; height: 300px; object-fit: cover; border-radius: var(--radius-lg); margin-bottom: var(--spacing-md);">
-            <h3>Senior Artisan</h3>
-            <p>Specializing in intricate designs and restoration work with meticulous attention to detail.</p>
+
+          <div class="card-inner theme-liaison">
+            <div class="photo-area">
+              <div class="avatar-circle avatar-nadia">
+                <i class="fas fa-user-circle main-user"></i>
+                <div class="role-badge"><i class="fas fa-handshake"></i></div>
+              </div>
+            </div>
+            <div class="card-body">
+              <h3 class="name-tag">Nadia</h3>
+              <span class="label-tag" data-i18n="about.guild.nadia.label">Lead Strategist & Logistics</span>
+              <p class="description" data-i18n="about.guild.nadia.description">She bridges the communication between vision and craft. She ensures every client relationship is managed with precision and is responsible for the delivery of the country.</p>
+              <div class="info-box relations-ledger">
+                <span data-i18n="about.guild.nadia.info1">* Client Intake Verified</span><br>
+                <span data-i18n="about.guild.nadia.info2">* National Delivery: Active</span><br>
+                <span data-i18n="about.guild.nadia.info3">* Liaison Level: Primary</span>
+              </div>
+            </div>
+            <div class="card-footer">
+              <span><i class="fas fa-comments mr-1"></i> <span data-i18n="about.guild.nadia.footerLeft">Communication</span></span>
+              <span data-i18n="about.guild.nadia.footerRight">Relations</span>
+            </div>
           </div>
-          <div class="card" style="text-align: center;">
-            <img src="/assets/images/artisan-3.jpg" alt="Design Specialist" style="width: 100%; height: 300px; object-fit: cover; border-radius: var(--radius-lg); margin-bottom: var(--spacing-md);">
-            <h3>Design Specialist</h3>
-            <p>Bringing creative vision to life, ensuring each custom piece reflects our high standards.</p>
+
+          <div class="card-inner theme-tech">
+            <div class="photo-area">
+              <div class="avatar-circle avatar-ibrahim">
+                <i class="fas fa-user-circle main-user"></i>
+                <div class="role-badge"><i class="fas fa-code"></i></div>
+              </div>
+            </div>
+            <div class="card-body">
+              <h3 class="name-tag">Ibrahim</h3>
+              <span class="label-tag" data-i18n="about.guild.ibrahim.label">Digital Systems Director</span>
+              <p class="description" data-i18n="about.guild.ibrahim.description">He is the architect of the digital presence. He developed the web platform, manages the e-commerce engine, and optimizes all AdSense revenue streams.</p>
+              <div class="info-box dev-terminal">
+                <span data-i18n="about.guild.ibrahim.info1">&gt; PLATFORM_STABLE</span><br>
+                <span data-i18n="about.guild.ibrahim.info2">&gt; REVENUE_OPTIMIZED</span><br>
+                <span data-i18n="about.guild.ibrahim.info3">&gt; SYSTEMS_ACTIVE</span>
+              </div>
+            </div>
+            <div class="card-footer">
+              <span><i class="fas fa-server mr-1"></i> <span data-i18n="about.guild.ibrahim.footerLeft">Code</span></span>
+              <span data-i18n="about.guild.ibrahim.footerRight">Infrastructure</span>
+            </div>
           </div>
         </div>
       </div>
@@ -158,29 +413,29 @@
     <!-- Why Choose Section -->
     <section class="section">
       <div class="container">
-        <h2 class="section-title">Why Choose Gamra Wood Craft?</h2>
+        <h2 class="section-title" data-i18n="about.whyTitle">Why Choose Gamra Wood Craft?</h2>
 
         <div class="grid-2" style="gap: 3rem;">
           <div>
-            <h3>Custom Made to Order</h3>
-            <p>Every piece is handcrafted specifically for you, ensuring it perfectly fits your space and style.</p>
+            <h3 data-i18n="about.whyLeft1Title">Custom Made to Order</h3>
+            <p data-i18n="about.whyLeft1Desc">Every piece is handcrafted specifically for you, ensuring it perfectly fits your space and style.</p>
 
-            <h3 style="margin-top: var(--spacing-lg);">Premium Materials</h3>
-            <p>We source the finest woods and materials, ensuring durability and beauty that stands the test of time.</p>
+            <h3 style="margin-top: var(--spacing-lg);" data-i18n="about.whyLeft2Title">Premium Materials</h3>
+            <p data-i18n="about.whyLeft2Desc">We source the finest woods and materials, ensuring durability and beauty that stands the test of time.</p>
 
-            <h3 style="margin-top: var(--spacing-lg);">Expert Craftsmanship</h3>
-            <p>Our artisans combine traditional techniques with modern Design sensibilities for exceptional results.</p>
+            <h3 style="margin-top: var(--spacing-lg);" data-i18n="about.whyLeft3Title">Expert Craftsmanship</h3>
+            <p data-i18n="about.whyLeft3Desc">Our artisans combine traditional techniques with modern Design sensibilities for exceptional results.</p>
           </div>
 
           <div>
-            <h3>Personal Service</h3>
-            <p>We work closely with you throughout the entire process, from concept to delivery and beyond.</p>
+            <h3 data-i18n="about.whyRight1Title">Personal Service</h3>
+            <p data-i18n="about.whyRight1Desc">We work closely with you throughout the entire process, from concept to delivery and beyond.</p>
 
-            <h3 style="margin-top: var(--spacing-lg);">Clear Project Scope</h3>
-            <p>Quality handmade furniture at fair prices, with transparent communication on costs and timelines.</p>
+            <h3 style="margin-top: var(--spacing-lg);" data-i18n="about.whyRight2Title">Clear Project Scope</h3>
+            <p data-i18n="about.whyRight2Desc">Quality handmade furniture at fair prices, with transparent communication on costs and timelines.</p>
 
-            <h3 style="margin-top: var(--spacing-lg);">Lifetime Support</h3>
-            <p>We stand behind our work with ongoing support, maintenance advice, and restoration services.</p>
+            <h3 style="margin-top: var(--spacing-lg);" data-i18n="about.whyRight3Title">Lifetime Support</h3>
+            <p data-i18n="about.whyRight3Desc">We stand behind our work with ongoing support, maintenance advice, and restoration services.</p>
           </div>
         </div>
       </div>
@@ -189,9 +444,9 @@
     <!-- CTA Section -->
     <section class="section" style="background-color: var(--color-black); color: white; text-align: center;">
       <div class="container">
-        <h2 style="color: white;">Ready to Work With Us?</h2>
-        <p style="font-size: var(--text-lg); margin: var(--spacing-lg) 0; color: var(--color-beige);">Let's create a piece that fits the room and the brief.</p>
-        <a href="/#contact" class="btn btn-primary">Contact Us Today</a>
+        <h2 style="color: white;" data-i18n="about.ctaTitle">Ready to Work With Us?</h2>
+        <p style="font-size: var(--text-lg); margin: var(--spacing-lg) 0; color: var(--color-beige);" data-i18n="about.ctaDescription">Let's create a piece that fits the room and the brief.</p>
+        <a href="/#contact" class="btn btn-primary" data-i18n="about.ctaButton">Contact Us Today</a>
       </div>
     </section>
   </main>

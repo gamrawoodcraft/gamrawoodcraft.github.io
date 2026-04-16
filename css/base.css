@@ -1,10 +1,10 @@
 /* ===== GAMRA WOOD CRAFT - BASE CSS ===== */
 :root {
-  --color-white: #f7f2ea;
-  --color-light-gray: #eee4d5;
-  --color-beige: #e2d2bb;
-  --color-taupe: #8f6f57;
-  --color-black: #231b16;
+  --color-white: #d2c1b3;
+  --color-light-gray: #d2c1b3;
+  --color-beige: #b8a28e;
+  --color-taupe: #96806c;
+  --color-black: #76614f;
 
   --font-primary: 'Cairo', 'Arial', sans-serif;
   --font-secondary: 'Poppins', 'Arial', sans-serif;
@@ -53,12 +53,29 @@ body {
   color: var(--color-black);
   line-height: 1.65;
   background:
-    radial-gradient(circle at top left, rgba(226, 210, 187, 0.38), transparent 34%),
-    radial-gradient(circle at 88% 12%, rgba(143, 111, 87, 0.16), transparent 28%),
-    linear-gradient(180deg, #f8f4ed 0%, var(--color-white) 38%, #f4ede3 100%);
+    radial-gradient(circle at top left, rgba(184, 162, 142, 0.38), transparent 34%),
+    radial-gradient(circle at 88% 12%, rgba(150, 128, 108, 0.16), transparent 28%),
+    linear-gradient(180deg, #e4d7cd 0%, var(--color-white) 38%, #d7c8bb 100%);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
+}
+
+html:not(.i18n-ready) body {
+  visibility: hidden;
+}
+
+html.i18n-ready body {
+  visibility: visible;
+}
+
+html.js body {
+  transition: opacity 0.12s ease;
+}
+
+html.js body.page-leaving {
+  opacity: 0.94;
+  pointer-events: none;
 }
 
 body::before {

@@ -41,7 +41,7 @@ function displayPortfolio(filtered = null) {
       <h3 class="card-title">${item.title}</h3>
       <p class="card-description">${description}</p>
       <a href="/item.html?id=${item.id}" class="btn btn-primary" style="display: inline-block; margin-top: var(--spacing-md); width: 100%; text-align: center;">
-        ${window.i18n?.t?.('portfolio.viewProject') || 'View Project'}
+        ${window.i18n?.t?.('View Project') || 'View Project'}
       </a>
     `;
     grid.appendChild(card);

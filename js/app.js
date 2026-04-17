@@ -36,13 +36,13 @@ function initBusinessHoursStatus() {
   if (!hourRows.length) {
     return;
   }
-
+                                                  
   hourRows.forEach(row => {
     const container = row.parentElement;
     if (!container || container.querySelector('[data-work-hours-status]')) {
       return;
     }
-
+                                                                                                                                                                                                                
     const statusLine = document.createElement('p');
     statusLine.className = 'hours-status';
     statusLine.setAttribute('data-work-hours-status', 'true');
@@ -259,7 +259,7 @@ function initPageTransitions() {
 function initContactFormPopup() {
   const forms = document.querySelectorAll('form[action*="formspree.io"]');
   if (!forms.length) {
-    return;
+    return;                     
   }
 
   forms.forEach(form => {

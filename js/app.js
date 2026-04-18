@@ -262,9 +262,73 @@ function initContactFormPopup() {
     return;                     
   }
 
+  const formspreeEndpoints = ['https://formspree.io/f/xykljjwl', 'https://formspree.io/f/xeevkkgd'];
+  const dailyLimit = 2;
+  const dailyLimitStorageKey = 'gamrawoodcraft_form_daily_limit';
+
+  const getTodayKey = () => new Date().toISOString().slice(0, 10);
+
+  const readDailyState = () => {
+    const rawValue = window.localStorage.getItem(dailyLimitStorageKey);
+    if (!rawValue) {
+      return { day: getTodayKey(), count: 0 };
+    }
+
+    try {
+      const parsed = JSON.parse(rawValue);
+      if (!parsed || typeof parsed.day !== 'string' || typeof parsed.count !== 'number') {
+        return { day: getTodayKey(), count: 0 };
+      }
+
+      if (parsed.day !== getTodayKey()) {
+        return { day: getTodayKey(), count: 0 };
+      }
+
+      return parsed;
+    } catch {
+      return { day: getTodayKey(), count: 0 };
+    }
+  };
+
+  const writeDailyState = state => {
+    window.localStorage.setItem(dailyLimitStorageKey, JSON.stringify(state));
+  };
+
+  const isDailyLimitReached = () => {
+    const state = readDailyState();
+    return state.count >= dailyLimit;
+  };
+
+  const incrementDailyCount = () => {
+    const state = readDailyState();
+    state.count += 1;
+    writeDailyState(state);
+  };
+
+  const postToEndpoint = async (form, endpoint) => {
+    const response = await fetch(endpoint, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: {
+        Accept: 'application/json'
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error(`Request failed for ${endpoint}`);
+    }
+
+    return response;
+  };
+
   forms.forEach(form => {
     form.addEventListener('submit', async event => {
       event.preventDefault();
+
+      if (isDailyLimitReached()) {
+        showFormPopup('Daily limit reached (2 messages). Please try again tomorrow.', 'error');
+        return;
+      }
 
       const submitButton = form.querySelector('button[type="submit"]');
       const originalLabel = submitButton?.textContent?.trim() || 'Send Message';
@@ -275,22 +339,23 @@ function initContactFormPopup() {
       }
 
       try {
-        const response = await fetch(form.action, {
-          method: form.method || 'POST',
-          body: new FormData(form),
-          headers: {
-            Accept: 'application/json'
-          }
-        });
+        await postToEndpoint(form, formspreeEndpoints[0]);
 
-        if (!response.ok) {
-          throw new Error('Request failed');
-        }
+        incrementDailyCount();
 
         form.reset();
         showFormPopup('Message sent successfully. We will contact you soon.', 'success');
       } catch (error) {
-        showFormPopup('Unable to send your message right now. Please try again.', 'error');
+        try {
+          await postToEndpoint(form, formspreeEndpoints[1]);
+
+          incrementDailyCount();
+
+          form.reset();
+          showFormPopup('Message sent successfully. We will contact you soon.', 'success');
+        } catch {
+          showFormPopup('Unable to send your message right now. Please try again.', 'error');
+        }
       } finally {
         if (submitButton) {
           submitButton.disabled = false;

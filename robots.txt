@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://gamrawoodcraft.github.io/sitemap.xml
+Sitemap: https://gamrawoodcraft.vercel.app/sitemap.xml

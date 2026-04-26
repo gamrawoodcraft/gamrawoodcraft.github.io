@@ -22,5 +22,8 @@
   "homepage": "https://github.com/el-guemra-br/gamrawcraft-v1o1#readme",
   "devDependencies": {
     "tailwindcss": "^3.4.17"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
   }
 }

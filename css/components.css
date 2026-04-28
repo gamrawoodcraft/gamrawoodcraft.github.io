@@ -45,7 +45,7 @@ header {
 }
 
 .logo a::before {
-  content: 'GW';
+  
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -296,6 +296,50 @@ footer a:hover {
   filter: blur(1px);
   pointer-events: none;
   z-index: -1;
+}
+
+/* Hero visual logo container - keep images contained and centered */
+.hero-visual-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-visual-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-visual-block-side img,
+.hero-visual-block-main img,
+.hero-logo {
+  width: 100%;
+  height: 100%;
+  max-width: 220px;
+  max-height: 220px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Small site credit/footer */
+.site-credit {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #222;
+  background: #fff;
+  border-top: 1px solid #e5e7eb;
+  padding: 1.2rem 0 1.2rem 0;
+  margin-top: 2rem;
+  letter-spacing: 0.02em;
+  box-shadow: 0 -2px 8px 0 rgba(0,0,0,0.03);
+  z-index: 100;
+}
+.site-credit a {
+  color: #2563eb;
+  text-decoration: underline;
+  font-weight: 500;
 }
 
 .hero::before {
